@@ -20,8 +20,8 @@ function Identification() {
     <Card>
       <Header page='1' />
       <div className='flex justify-between'>
-        <form onSubmit={handleSubmit(onSubmit)} className='w-128'>
-          <div className='mb-4 h-36'>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='mb-2 h-36'>
             <div className='flex flex-col gap-4'>
               <label className='font-bold text-tiny'>სახელი*</label>
               <input
@@ -35,17 +35,17 @@ function Identification() {
                   },
                 })}
                 type='text'
-                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128 ${
                   errors.firstName && 'bg-red-200'
                 }`}
                 placeholder='იოსებ'
               />
-              {errors.firstName && (
-                <p className='text-red-500 pl-5 text-base'>
-                  სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
-                </p>
-              )}
             </div>
+            {errors.firstName && (
+              <p className='text-red-500 pl-5 text-base'>
+                სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
+              </p>
+            )}
           </div>
 
           <div className='mb-4 h-32'>
@@ -61,7 +61,7 @@ function Identification() {
                   },
                 })}
                 type='text'
-                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128 ${
                   errors.lastName && 'bg-red-200'
                 }`}
                 placeholder='ჯუღაშვილი'
@@ -87,7 +87,7 @@ function Identification() {
                   },
                 })}
                 type='email'
-                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128 ${
                   errors.email && 'bg-red-200'
                 }`}
                 placeholder='fbi@redberry.ge'
