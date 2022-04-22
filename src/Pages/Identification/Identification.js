@@ -1,12 +1,12 @@
+import FirstName from '../../Components/01-Inputs/FirstName';
 import illustration from '../../Assets/images/boy&girl.png';
+import LastName from '../../Components/01-Inputs/LastName';
 import RightArrow from '../../Assets/svg/rightArrow.svg';
-import Header from '../../Layouts/Header';
+import Email from '../../Components/01-Inputs/Email';
 import { useForm } from 'react-hook-form';
+import Header from '../../Layouts/Header';
 import { Link } from 'react-router-dom';
 import Card from '../../UI/Card';
-import FirstName from '../../Components/01-Inputs/FirstName';
-import LastName from '../../Components/01-Inputs/LastName';
-import Email from '../../Components/01-Inputs/Email';
 
 function Identification() {
   const {
@@ -31,8 +31,7 @@ function Identification() {
     value.trim().length >= 2 || `${target} ${errStr}`;
 
   const onlyLetters = (value, target) =>
-    /^[a-zA-Z]+$/.test(value) ||
-    `${target} ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`;
+    !/\d/.test(value) || `${target} ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`;
 
   return (
     <Card>
@@ -58,7 +57,7 @@ function Identification() {
             </p>
           </div>
           {isValid ? (
-            <Link to='/covid-situation'>
+            <Link to='/Covid'>
               <button>
                 <img
                   src={RightArrow}
