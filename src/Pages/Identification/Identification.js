@@ -3,6 +3,7 @@ import illustration from '../../Assets/images/boy&girl.png';
 import RightArrow from '../../Assets/svg/rightArrow.svg';
 import { useForm } from 'react-hook-form';
 import Card from '../../UI/Card';
+import Header from '../../Layouts/Header';
 
 function Identification() {
   const {
@@ -17,10 +18,7 @@ function Identification() {
 
   return (
     <Card>
-      <div className='bg-gray flex justify-between font-header font-bold items-center h-24 border-b-2 mb-10'>
-        <img src={RedberryLogoText} alt='Redberry logo' className='w-36' />
-        <p className='text-normal font-anonymous'>1/4</p>
-      </div>
+      <Header page='1' />
       <div className='flex justify-between'>
         <form onSubmit={handleSubmit(onSubmit)} className='w-128'>
           <div className='mb-4 h-36'>
