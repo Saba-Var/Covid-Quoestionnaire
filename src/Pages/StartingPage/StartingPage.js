@@ -23,14 +23,13 @@ function StartingPage() {
           onMouseEnter={hoverHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          {!hover && (
+          {!hover ? (
             <img
               src={StartSvg}
               alt='start questionnaire button'
               className='p-4 pt-0 hover:cursor-pointer w-50'
             />
-          )}
-          {hover && (
+          ) : (
             <Link to='/identification'>
               <img
                 src={StartSvgHover}
