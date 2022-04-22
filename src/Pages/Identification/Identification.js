@@ -1,7 +1,6 @@
 import illustration from '../../Assets/images/boy&girl.png';
 import RightArrow from '../../Assets/svg/rightArrow.svg';
 import InputWrapper from '../../Components/InputWrapper';
-import ErrorMesage from '../../Components/ErrorMessage';
 import Header from '../../Layouts/Header';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -29,6 +28,10 @@ function Identification() {
   const minLength = (value, target) =>
     value.trim().length >= 2 || `${target} ${errStr}`;
 
+  const onlyLetters = (value, target) =>
+    /^[a-zA-Z]+$/.test(value) ||
+    `${target} ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`;
+
   return (
     <Card>
       <Header page='1' />
@@ -41,6 +44,7 @@ function Identification() {
                 required: `სახელის ${errStr}`,
                 validate: {
                   minLength: (v) => minLength(v, 'სახელის'),
+                  onlyLetters: (v) => onlyLetters(v, 'სახელის'),
                 },
               })}
               type='text'
@@ -57,6 +61,7 @@ function Identification() {
                 required: `გვარის ${errStr}`,
                 validate: {
                   minLength: (v) => minLength(v, 'გვარის'),
+                  onlyLetters: (v) => onlyLetters(v, 'გვარის'),
                 },
               })}
               type='text'
