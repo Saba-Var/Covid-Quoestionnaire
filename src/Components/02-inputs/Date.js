@@ -1,10 +1,11 @@
-function Date() {
+function Date(props) {
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>
         მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*
       </p>
       <input
+        {...props.register('date', { required: true })}
         type='date'
         placeholder='დდ/თთ/წწ'
         max='2022-05-01'

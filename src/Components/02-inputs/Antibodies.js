@@ -1,4 +1,7 @@
-function Antibodies() {
+function Antibodies(props) {
+  const updateValue = (value) => {
+    props.setValue('antibodies', value, { shouldValidate: true });
+  };
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>
@@ -8,6 +11,8 @@ function Antibodies() {
         <div className='flex flex-col gap-5'>
           <label className='flex items-center gap-5  text-xl font-medium text-charcoal'>
             <input
+              {...props.register('antibodies', { required: true })}
+              onClick={() => updateValue('YES')}
               type='radio'
               name='anti'
               value='YES'
@@ -16,7 +21,14 @@ function Antibodies() {
             <span>კი</span>
           </label>
           <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-            <input type='radio' name='anti' value='NO' className='w-6 h-6' />
+            <input
+              {...props.register('antibodies', { required: true })}
+              onClick={() => updateValue('NO')}
+              type='radio'
+              name='anti'
+              value='NO'
+              className='w-6 h-6'
+            />
             <span>არა</span>
           </label>
         </div>
