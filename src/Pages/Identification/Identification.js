@@ -1,9 +1,20 @@
-import Card from '../../UI/Card';
 import RedberryLogoText from '../../Assets/svg/Redberry-Logo(text).svg';
 import illustration from '../../Assets/images/boy&girl.png';
 import RightArrow from '../../Assets/svg/rightArrow.svg';
+import { useForm } from 'react-hook-form';
+import Card from '../../UI/Card';
 
 function Identification() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data, e) => {
+    e.preventDefault();
+  };
+
   return (
     <Card>
       <div className='bg-gray flex justify-between font-header font-bold items-center h-24 border-b-2 mb-10'>
@@ -11,31 +22,86 @@ function Identification() {
         <p className='text-normal font-anonymous'>1/4</p>
       </div>
       <div className='flex justify-between'>
-        <form>
-          <div className='flex flex-col gap-4 mb-6 h-32'>
-            <label className='font-bold text-tiny w-128'>სახელი*</label>
-            <input
-              type='text'
-              className='border-2 h-12 px-5 border-black border-x border-y bg-transparent'
-              placeholder='იოსებ'
-            />
+        <form onSubmit={handleSubmit(onSubmit)} className='w-128'>
+          <div className='mb-4 h-36'>
+            <div className='flex flex-col gap-4'>
+              <label className='font-bold text-tiny'>სახელი*</label>
+              <input
+                {...register('firstName', {
+                  required:
+                    'სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
+                  minLength: {
+                    value: 2,
+                    message:
+                      'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                  },
+                })}
+                type='text'
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                  errors.firstName && 'bg-red-200'
+                }`}
+                placeholder='იოსებ'
+              />
+              {errors.firstName && (
+                <p className='text-red-500 pl-5 text-base'>
+                  სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
+                </p>
+              )}
+            </div>
           </div>
-          <div className='flex flex-col gap-4 mb-6 h-32'>
-            <label className='font-bold text-tiny w-128'>გვარი*</label>
-            <input
-              type='text'
-              className='border-2 h-12 px-5 border-black border-x border-y bg-transparent'
-              placeholder='ჯუღაშვილი'
-            />
+
+          <div className='mb-4 h-32'>
+            <div className='flex flex-col gap-4'>
+              <label className='font-bold text-tiny '>გვარი*</label>
+              <input
+                {...register('lastName', {
+                  required: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
+                  minLength: {
+                    value: 2,
+                    message:
+                      'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                  },
+                })}
+                type='text'
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                  errors.lastName && 'bg-red-200'
+                }`}
+                placeholder='ჯუღაშვილი'
+              />
+            </div>
+            {errors.lastName && (
+              <p className='text-red-500 pl-5 text-base'>
+                გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან
+              </p>
+            )}
           </div>
-          <div className='flex flex-col gap-4 mb-16 h-32'>
-            <label className='font-bold text-tiny w-128'>მეილი*</label>
-            <input
-              type='email'
-              className='border-2 h-12 px-5 border-black border-x border-y bg-transparent'
-              placeholder='fbi@redberry.ge'
-            />
+
+          <div className=' gap-4 mb-16 h-32'>
+            <div className='flex flex-col gap-4'>
+              <label className='font-bold text-tiny '>მეილი*</label>
+              <input
+                {...register('email', {
+                  required: 'თქვენ მიერ შეყვანილი მეილი არასწორია',
+                  validate: {
+                    emailFormat: (v) =>
+                      v.includes('@redberry.ge') ||
+                      'გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)',
+                  },
+                })}
+                type='email'
+                className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent ${
+                  errors.email && 'bg-red-200'
+                }`}
+                placeholder='fbi@redberry.ge'
+              />
+            </div>
+            {errors.email && (
+              <p className='text-red-500 pl-5 text-base'>
+                გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)
+              </p>
+            )}
           </div>
+
           <div className='border-t-[1px] w-fit pt-4'>
             <p className='text-slate-500'>
               *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
