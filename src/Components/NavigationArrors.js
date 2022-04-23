@@ -21,7 +21,6 @@ function NavigationArrors(props) {
           </button>
         </Link>
       )}
-
       {props.next &&
         (props.isValid ? (
           <Link to={props.next}>

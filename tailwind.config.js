@@ -9,6 +9,7 @@ module.exports = {
       animation: {
         'rotate-center':
           'rotate-center 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955)   both',
+        'flip-scale-up-hor': 'flip-scale-up-hor 0.5s linear   both',
       },
       keyframes: {
         'rotate-center': {
@@ -17,6 +18,17 @@ module.exports = {
           },
           to: {
             transform: 'rotate(360deg)',
+          },
+        },
+        'flip-scale-up-hor': {
+          '0%': {
+            transform: 'scale(1) rotateX(0)',
+          },
+          '50%': {
+            transform: 'scale(2.5) rotateX(-90deg)',
+          },
+          to: {
+            transform: 'scale(1) rotateX(-180deg)',
           },
         },
       },
