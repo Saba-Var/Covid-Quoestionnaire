@@ -1,4 +1,4 @@
-import StartSvgHover from '../../Assets/images/startingQuestionnaireHover.png';
+import StartSvgHover from '../../Assets/svg/StartingQuestionaire-hover.svg';
 import StartSvg from '../../Assets/svg/startingQuestionnaire.svg';
 import RedberryLogo from '../../Assets/images/Redberry-Logo.png';
 import { Link } from 'react-router-dom';
@@ -27,7 +27,7 @@ function StartingPage() {
             <img
               src={StartSvg}
               alt='start questionnaire button'
-              className='p-4 pt-0 hover:cursor-pointer w-50'
+              className='p-4 pt-1 hover:cursor-pointer w-50'
             />
           ) : (
             <Link to='/identification'>
