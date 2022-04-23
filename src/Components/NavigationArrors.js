@@ -5,8 +5,8 @@ function NavigationArrors(props) {
   return (
     <div
       className={`absolute ${
-        props.bottom
-      } right-1/2 top-full hover:cursor-pointer z-10 w-36 h-fit flex ${
+        props.top
+      }  right-1/2 top-full hover:cursor-pointer z-10 w-36 h-fit flex ${
         props.back && props.back && 'justify-between'
       } ${!props.back && 'justify-end'} ${!props.next && 'justify-start'}`}
     >

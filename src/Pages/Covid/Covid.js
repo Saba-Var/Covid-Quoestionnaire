@@ -1,4 +1,5 @@
 import HighTemperature from '../../Assets/images/highTemperature.png';
+import NavigationArrors from '../../Components/NavigationArrors';
 import Antibodies from '../../Components/02-inputs/Antibodies';
 import HadCovid from '../../Components/02-inputs/HadCovid';
 import Count from '../../Components/02-inputs/Count';
@@ -54,10 +55,16 @@ function Covid(props) {
           <Date register={register} errors={errors} />
         )}
         {inputState.antibodies === 'YES' && <Count register={register} />}
+        <NavigationArrors
+          back='/Identification'
+          next='/Vaccinated'
+          isValid={isValid}
+          top={'pt-12'}
+        />
       </form>
-      <div className='absolute right-40 top-28'>
-        <img src={HighTemperature} alt='sick boy' className='pt-20' />
-        <div className='bg-red-500 h-56 w-56 rounded-full absolute top-86 left-24 mix-blend-multiply'></div>
+      <div className='absolute right-40 top-28 '>
+        <img src={HighTemperature} alt='sick boy' className='pt-8' />
+        <div className='bg-red-500 h-56 w-56 rounded-full absolute top-72 left-24 mix-blend-multiply'></div>
       </div>
     </Card>
   );

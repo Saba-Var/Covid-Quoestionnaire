@@ -56,11 +56,7 @@ function Identification() {
             </p>
           </div>
 
-          <NavigationArrors
-            isValid={isValid}
-            bottom={'bottom-4'}
-            next='/Covid'
-          />
+          <NavigationArrors isValid={isValid} top={'pt-4'} next='/Covid' />
         </form>
         <div className='absolute right-40 top-36 '>
           <img src={illustration} alt='boy and girl' className='max-w-4xl' />
