@@ -14,7 +14,6 @@ function Frequency(props) {
           onClick={() => updateValue('კვირაში ორჯერ')}
           type='radio'
           name='frequency'
-          value='კვირაში ორჯერ'
           className='w-6 h-6 bg-red-400 text-red-400'
         />
         <span>კვირაში ორჯერ</span>
@@ -25,7 +24,6 @@ function Frequency(props) {
           onClick={() => updateValue('კვირაში ერთხელ')}
           type='radio'
           name='frequency'
-          value='კვირაში ერთხელ'
           className='w-6 h-6'
         />
         <span>კვირაში ერთხელ</span>
@@ -36,7 +34,6 @@ function Frequency(props) {
           onClick={() => updateValue('ორ კვირაში ერთხელ')}
           type='radio'
           name='frequency'
-          value='ორ კვირაში ერთხელ'
           className='w-6 h-6'
         />
         <span>ორ კვირაში ერთხელ</span>
@@ -47,7 +44,6 @@ function Frequency(props) {
           onClick={() => updateValue('თვეში ერთხელ')}
           type='radio'
           name='frequency'
-          value='თვეში ერთხელ'
           className='w-6 h-6'
         />
         <span>თვეში ერთხელ</span>

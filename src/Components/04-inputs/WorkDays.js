@@ -13,7 +13,6 @@ function WorkDays(props) {
           onClick={() => updateValue('0')}
           type='radio'
           name='workDays'
-          value={'0'}
           className='w-6 h-6 bg-red-400 text-red-400'
         />
         <span>0</span>
@@ -24,7 +23,6 @@ function WorkDays(props) {
           onClick={() => updateValue('1')}
           type='radio'
           name='workDays'
-          value={'1'}
           className='w-6 h-6'
         />
         <span>1</span>
@@ -35,7 +33,6 @@ function WorkDays(props) {
           onClick={() => updateValue('2')}
           type='radio'
           name='workDays'
-          value={'2'}
           className='w-6 h-6'
         />
         <span>2</span>
@@ -46,7 +43,6 @@ function WorkDays(props) {
           onClick={() => updateValue('3')}
           type='radio'
           name='workDays'
-          value={'3'}
           className='w-6 h-6'
         />
         <span>3</span>
@@ -57,7 +53,6 @@ function WorkDays(props) {
           onClick={() => updateValue('4')}
           type='radio'
           name='workDays'
-          value={'4'}
           className='w-6 h-6'
         />
         <span>4</span>
@@ -68,7 +63,6 @@ function WorkDays(props) {
           onClick={() => updateValue('5')}
           type='radio'
           name='workDays'
-          value={'5'}
           className='w-6 h-6'
         />
         <span>5</span>
