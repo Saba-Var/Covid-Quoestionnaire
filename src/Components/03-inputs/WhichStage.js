@@ -1,4 +1,4 @@
-import ErrorMessage from '../ErrosMessage';
+import ErrorMessage from '../ErrorMessage';
 import RadioInputWrapper from '../RadioInputWrapper';
 
 function WhichStage(props) {

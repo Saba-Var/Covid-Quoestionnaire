@@ -3,8 +3,9 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        normal: '2.5rem',
         tiny: '1.375rem',
+        standard: '1.5rem',
+        normal: '2.5rem',
       },
       animation: {
         'rotate-center':
@@ -45,8 +46,11 @@ module.exports = {
         86: '21.5rem',
         128: '32rem',
         168: '42rem',
+        162: '40.5rem',
+        176: '44rem',
+        248: '62rem',
         270: '67.5rem',
-        480: '120rem',
+        492: '123rem',
       },
       colors: {
         gray: 'rgb(234,234,234)',

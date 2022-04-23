@@ -1,4 +1,4 @@
-import ErrorMessage from '../ErrosMessage';
+import ErrorMessage from '../ErrorMessage';
 function Date(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (

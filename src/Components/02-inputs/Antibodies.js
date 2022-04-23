@@ -1,5 +1,5 @@
 import RadioInputWrapper from '../RadioInputWrapper';
-import ErrorMessage from '../ErrosMessage';
+import ErrorMessage from '../ErrorMessage';
 
 function Antibodies(props) {
   const updateValue = (value) => {
