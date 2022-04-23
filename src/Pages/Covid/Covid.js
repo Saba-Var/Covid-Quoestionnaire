@@ -17,6 +17,7 @@ function Covid(props) {
     unregister,
     formState: { errors, isValid },
   } = useForm({
+    mode: 'onChange',
     defaultValues: {
       HadCovid: '',
       count: '',

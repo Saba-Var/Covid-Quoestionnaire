@@ -13,6 +13,7 @@ function Identification() {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({
+    mode: 'onChange',
     defaultValues: {
       firstName: '',
       lastName: '',
