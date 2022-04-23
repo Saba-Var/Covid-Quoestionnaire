@@ -1,12 +1,11 @@
 import FirstName from '../../Components/01-Inputs/FirstName';
 import illustration from '../../Assets/images/boy&girl.png';
 import LastName from '../../Components/01-Inputs/LastName';
-import RightArrow from '../../Assets/svg/rightArrow.svg';
 import Email from '../../Components/01-Inputs/Email';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
-import { Link } from 'react-router-dom';
 import Card from '../../UI/Card';
+import NavigationArrors from '../../Components/NavigationArrors';
 
 function Identification() {
   const {
@@ -56,25 +55,12 @@ function Identification() {
               *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
             </p>
           </div>
-          {isValid ? (
-            <Link to='/Covid'>
-              <button>
-                <img
-                  src={RightArrow}
-                  alt='arrow icon'
-                  className='w-4 absolute bottom-4 right-1/2 top-full hover:cursor-pointer z-10'
-                />
-              </button>
-            </Link>
-          ) : (
-            <button>
-              <img
-                src={RightArrow}
-                alt='arrow icon'
-                className='w-4 absolute bottom-4 right-1/2 top-full hover:cursor-pointer z-10'
-              />
-            </button>
-          )}
+
+          <NavigationArrors
+            isValid={isValid}
+            bottom={'bottom-4'}
+            next='/Covid'
+          />
         </form>
         <div className='absolute right-40 top-36 '>
           <img src={illustration} alt='boy and girl' className='max-w-4xl' />
