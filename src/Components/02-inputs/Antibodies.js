@@ -1,7 +1,14 @@
+import ErrorMessage from '../ErrosMessage';
 function Antibodies(props) {
   const updateValue = (value) => {
     props.setValue('antibodies', value, { shouldValidate: true });
+    if (value === 'YES') props.unregister('date');
+    else {
+      props.unregister('count');
+      props.unregister('antibody count');
+    }
   };
+  const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>
@@ -31,6 +38,7 @@ function Antibodies(props) {
             />
             <span>არა</span>
           </label>
+          {props.errors.antibodies && <ErrorMessage text={errorMessage} />}
         </div>
       </div>
     </div>

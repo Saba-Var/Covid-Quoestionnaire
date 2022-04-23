@@ -13,17 +13,22 @@ function Covid(props) {
     handleSubmit,
     watch,
     setValue,
-
+    unregister,
     formState: { errors, isValid },
-  } = useForm();
-  // const data = watch();
+  } = useForm({
+    defaultValues: {
+      HadCovid: '',
+      count: '',
+      antibodies: '',
+      date: '',
+    },
+  });
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log(isValid);
   };
   const inputState = watch();
-  console.log(inputState);
+
   return (
     <Card>
       <Header page='2' />
@@ -31,16 +36,27 @@ function Covid(props) {
         className='flex flex-col gap-14 w-168'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <HadCovid register={register} setValue={setValue} />
+        <HadCovid
+          errors={errors}
+          register={register}
+          setValue={setValue}
+          unregister={unregister}
+        />
         {inputState.HadCovid === 'YES' && (
-          <Antibodies register={register} setValue={setValue} />
+          <Antibodies
+            errors={errors}
+            register={register}
+            setValue={setValue}
+            unregister={unregister}
+          />
         )}
-        {inputState.antibodies === 'NO' && <Date register={register} />}
+        {inputState.antibodies === 'NO' && (
+          <Date register={register} errors={errors} />
+        )}
         {inputState.antibodies === 'YES' && <Count register={register} />}
-        <button className='p-9 bg-orange-500'>Next page</button>
       </form>
       <div className='absolute right-40 top-28'>
-        {/* <img src={HighTemperature} alt='sick boy' className='pt-20' /> */}
+        <img src={HighTemperature} alt='sick boy' className='pt-20' />
         <div className='bg-red-500 h-56 w-56 rounded-full absolute top-86 left-24 mix-blend-multiply'></div>
       </div>
     </Card>

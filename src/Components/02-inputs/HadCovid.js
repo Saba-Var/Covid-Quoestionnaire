@@ -1,7 +1,15 @@
+import ErrorMessage from '../ErrosMessage';
 function HadCovid(props) {
   const updateValue = (value) => {
     props.setValue('HadCovid', value, { shouldValidate: true });
+    if (value !== 'YES') {
+      props.unregister('antibodies');
+      props.unregister('date');
+      props.unregister('count');
+      props.unregister('antibody count');
+    }
   };
+  const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>გაქვს გადატანილი Covid-19*?</p>
@@ -10,7 +18,7 @@ function HadCovid(props) {
           <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
             <input
               onClick={() => updateValue('YES')}
-              {...props.register('HadCovid', { required: true })}
+              {...props.register('HadCovid', { required: errorMessage })}
               type='radio'
               name='hadCovid'
               value='YES'
@@ -20,8 +28,10 @@ function HadCovid(props) {
           </label>
           <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
             <input
-              {...props.register('HadCovid', { required: true })}
-              onClick={() => updateValue('NO')}
+              {...props.register('HadCovid', { required: errorMessage })}
+              onClick={() => {
+                updateValue('NO');
+              }}
               type='radio'
               name='hadCovid'
               value='NO'
@@ -31,8 +41,10 @@ function HadCovid(props) {
           </label>
           <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
             <input
-              {...props.register('HadCovid', { required: true })}
-              onClick={() => updateValue('NOW')}
+              {...props.register('HadCovid', { required: errorMessage })}
+              onClick={() => {
+                updateValue('NOW');
+              }}
               type='radio'
               name='hadCovid'
               value='NOW'
@@ -40,6 +52,7 @@ function HadCovid(props) {
             />
             <span>ახლა მაქვს</span>
           </label>
+          {props.errors.HadCovid && <ErrorMessage text={errorMessage} />}
         </div>
       </div>
     </div>
