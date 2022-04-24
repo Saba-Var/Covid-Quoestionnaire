@@ -1,39 +1,27 @@
-import RadioInputWrapper from '../RadioInputWrapper';
+import RadioButtonUnregister from '../RadioButtonUnregister';
+import RadioInputContainer from '../RadioInputContainer';
 import ErrorMessage from '../ErrorMessage';
 
 function Antibodies(props) {
-  const unregister = (value) => {
-    if (value === 'კი') props.unregister('date');
-    else {
-      props.unregister('count');
-      props.unregister('antibody count');
-    }
-  };
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
-    <RadioInputWrapper question='ანტისხეულების ტესტი გაქვს გაკეთებული?*'>
-      <label className='flex items-center gap-5  text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('antibodies', { required: true })}
-          onClick={() => unregister('კი')}
-          type='radio'
-          value='კი'
-          className='w-6 h-6 bg-red-400 text-red-400'
-        />
-        <span>კი</span>
-      </label>
-      <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('antibodies', { required: true })}
-          onClick={() => unregister('არა')}
-          type='radio'
-          value='არა'
-          className='w-6 h-6'
-        />
-        <span>არა</span>
-      </label>
+    <RadioInputContainer question='ანტისხეულების ტესტი გაქვს გაკეთებული?*'>
+      <RadioButtonUnregister
+        target='antibodies'
+        value='კი'
+        component='Antibodies'
+        unregister={props.unregister}
+        register={props.register}
+      />
+      <RadioButtonUnregister
+        target='antibodies'
+        value='არა'
+        component='Antibodies'
+        unregister={props.unregister}
+        register={props.register}
+      />
       {props.errors.antibodies && <ErrorMessage text={errorMessage} />}
-    </RadioInputWrapper>
+    </RadioInputContainer>
   );
 }
 

@@ -1,4 +1,4 @@
-function RadioInputWrapper(props) {
+function RadioInputContainer(props) {
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>{props.question}</p>
@@ -9,4 +9,4 @@ function RadioInputWrapper(props) {
   );
 }
 
-export default RadioInputWrapper;
+export default RadioInputContainer;

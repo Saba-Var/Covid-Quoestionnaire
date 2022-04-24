@@ -1,4 +1,4 @@
-import RadioInputWrapper from '../RadioInputWrapper';
+import RadioInputContainer from '../RadioInputContainer';
 import ErrorMessage from '../ErrorMessage';
 import RadioButton from '../RadioButton';
 
@@ -9,7 +9,7 @@ function Waiting(props) {
   const option3 = 'გადატანილი მაქვს და ვგეგმავ აცრას';
   return (
     <>
-      <RadioInputWrapper question='რას ელოდები?*'>
+      <RadioInputContainer question='რას ელოდები?*'>
         <RadioButton
           target='waiting'
           register={props.register}
@@ -26,7 +26,7 @@ function Waiting(props) {
           value={option3}
         />
         {props.errors.waiting && <ErrorMessage text={errorMessage} />}
-      </RadioInputWrapper>
+      </RadioInputContainer>
       {props.formState.waiting === option2 && (
         <div className='pl-12'>
           <p className='text-xl font-normal text-charcoal'>

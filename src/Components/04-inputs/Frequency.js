@@ -1,10 +1,10 @@
-import RadioInputWrapper from '../../Components/RadioInputWrapper';
+import RadioInputContainer from '../../Components/RadioInputContainer';
 import RadioButton from '../RadioButton';
 import ErrorMessage from '../ErrorMessage';
 
 function Frequency(props) {
   return (
-    <RadioInputWrapper question='რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*'>
+    <RadioInputContainer question='რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*'>
       <RadioButton
         target='frequency'
         register={props.register}
@@ -28,7 +28,7 @@ function Frequency(props) {
       {props.errors.frequency && (
         <ErrorMessage text='ამ ველის შევსება სავალდებულოა' />
       )}
-    </RadioInputWrapper>
+    </RadioInputContainer>
   );
 }
 

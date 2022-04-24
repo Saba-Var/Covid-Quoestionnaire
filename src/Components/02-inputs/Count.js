@@ -3,7 +3,7 @@ function Count(props) {
     <div>
       <p className='font-bold text-tiny mb-4'>
         თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების
-        რაოდენობა*
+        რაოდენობა
       </p>
       <div className='flex flex-col gap-6 '>
         <input

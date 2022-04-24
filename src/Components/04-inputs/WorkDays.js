@@ -1,9 +1,9 @@
-import RadioInputWrapper from '../RadioInputWrapper';
+import RadioInputContainer from '../RadioInputContainer';
 import RadioButton from '../RadioButton';
 import ErrorMessage from '../ErrorMessage';
 function WorkDays(props) {
   return (
-    <RadioInputWrapper question='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'>
+    <RadioInputContainer question='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'>
       <RadioButton target='workDays' register={props.register} value='0' />
       <RadioButton target='workDays' register={props.register} value='1' />
       <RadioButton target='workDays' register={props.register} value='2' />
@@ -13,7 +13,7 @@ function WorkDays(props) {
       {props.errors.workDays && (
         <ErrorMessage text='ამ ველის შევსება სავალდებულოა' />
       )}
-    </RadioInputWrapper>
+    </RadioInputContainer>
   );
 }
 

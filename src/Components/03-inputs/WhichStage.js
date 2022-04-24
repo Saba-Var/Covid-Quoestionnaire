@@ -1,4 +1,4 @@
-import RadioInputWrapper from '../RadioInputWrapper';
+import RadioInputContainer from '../RadioInputContainer';
 import ErrorMessage from '../ErrorMessage';
 import RadioButton from '../RadioButton';
 
@@ -9,13 +9,12 @@ function WhichStage(props) {
   const option3 = 'პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე';
   return (
     <>
-      <RadioInputWrapper question='აირჩიე რა ეტაპზე ხარ?*'>
+      <RadioInputContainer question='აირჩიე რა ეტაპზე ხარ?*'>
         <RadioButton target='stage' register={props.register} value={option1} />
         <RadioButton target='stage' register={props.register} value={option2} />
         <RadioButton target='stage' register={props.register} value={option3} />
-
         {props.errors.stage && <ErrorMessage text={errorMessage} />}
-      </RadioInputWrapper>
+      </RadioInputContainer>
       {props.formState.stage === option3 && (
         <div className='pl-12'>
           <p className='text-xl'>
