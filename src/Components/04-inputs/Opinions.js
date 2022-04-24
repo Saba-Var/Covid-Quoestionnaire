@@ -6,8 +6,6 @@ function Opinions(props) {
       </span>
       <textarea
         {...props.register('opinions')}
-        onChange={(e) => props.setValue('opinions', e.target.value)}
-        name='Opinions'
         className='w-full h-48 bg-transparent border-[0.8px] resize-none text-2xl p-2 border-charcoal'
       />
     </div>

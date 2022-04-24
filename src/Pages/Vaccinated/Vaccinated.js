@@ -1,17 +1,16 @@
-import NavigationArrors from '../../Components/NavigationArrors';
-import Header from '../../Layouts/Header';
-import Card from '../../UI/Card';
-import DoctorImg from '../../Assets/images/doctor.png';
-import { useForm } from 'react-hook-form';
 import HadVaccinated from '../../Components/03-inputs/HadVaccinated';
+import NavigationArrors from '../../Components/NavigationArrors';
 import WhichStage from '../../Components/03-inputs/WhichStage';
 import Waiting from '../../Components/03-inputs/Waiting';
+import DoctorImg from '../../Assets/images/doctor.png';
+import { useForm } from 'react-hook-form';
+import Header from '../../Layouts/Header';
+import Card from '../../UI/Card';
 
 function Vaccinated() {
   const {
     register,
     handleSubmit,
-    setValue,
     watch,
     unregister,
     formState: { isValid, errors },
@@ -26,9 +25,7 @@ function Vaccinated() {
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
-
   const formState = watch();
-
   return (
     <Card>
       <Header page='3' />
@@ -38,25 +35,18 @@ function Vaccinated() {
       >
         <HadVaccinated
           register={register}
-          setValue={setValue}
           unregister={unregister}
           errors={errors}
         />
         {formState.hadVaccinated === 'კი' && (
           <WhichStage
             register={register}
-            setValue={setValue}
             formState={formState}
             errors={errors}
           />
         )}
         {formState.hadVaccinated === 'არა' && (
-          <Waiting
-            register={register}
-            setValue={setValue}
-            formState={formState}
-            errors={errors}
-          />
+          <Waiting register={register} formState={formState} errors={errors} />
         )}
         <NavigationArrors
           back='/Covid'

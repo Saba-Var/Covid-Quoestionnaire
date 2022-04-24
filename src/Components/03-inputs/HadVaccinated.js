@@ -2,8 +2,7 @@ import ErrorMessage from '../ErrorMessage';
 import RadioInputWrapper from '../RadioInputWrapper';
 
 function HadVaccinated(props) {
-  const updateValue = (value) => {
-    props.setValue('hadVaccinated', value, { shouldValidate: true });
+  const unregister = (value) => {
     if (value === 'კი') props.unregister('waiting');
     else props.unregister('stage');
   };
@@ -14,9 +13,8 @@ function HadVaccinated(props) {
       <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
         <input
           {...props.register('hadVaccinated', { required: errorMessage })}
-          onClick={() => updateValue('კი')}
+          onClick={() => unregister('კი')}
           type='radio'
-          name='hadVaccinated'
           value='კი'
           className='w-6 h-6 bg-red-400 text-red-400'
         />
@@ -25,9 +23,8 @@ function HadVaccinated(props) {
       <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
         <input
           {...props.register('hadVaccinated', { required: errorMessage })}
-          onClick={() => updateValue('არა')}
+          onClick={() => unregister('არა')}
           type='radio'
-          name='hadVaccinated'
           value='არა'
           className='w-6 h-6'
         />

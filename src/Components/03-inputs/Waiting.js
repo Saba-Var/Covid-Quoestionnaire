@@ -1,10 +1,8 @@
-import ErrorMessage from '../ErrorMessage';
 import RadioInputWrapper from '../RadioInputWrapper';
+import ErrorMessage from '../ErrorMessage';
+import RadioButton from '../RadioButton';
 
 function Waiting(props) {
-  const updateValue = (value) => {
-    props.setValue('stage', value, { shouldValidate: true });
-  };
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   const option1 = 'დარეგისტრირებული ვარ და ველოდები რიცხვს';
   const option2 = 'არ ვგეგმავ';
@@ -12,42 +10,24 @@ function Waiting(props) {
   return (
     <>
       <RadioInputWrapper question='რას ელოდები?*'>
-        <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-          <input
-            {...props.register('waiting', { required: errorMessage })}
-            onClick={() => updateValue(option1)}
-            type='radio'
-            name='waiting'
-            value={option1}
-            className='w-6 h-6 bg-red-400 text-red-400'
-          />
-          <span>{option1}</span>
-        </label>
-        <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-          <input
-            {...props.register('waiting', { required: errorMessage })}
-            onClick={() => updateValue(option2)}
-            type='radio'
-            name='waiting'
-            value={option2}
-            className='w-6 h-6'
-          />
-          <span>{option2}</span>
-        </label>
-        <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-          <input
-            {...props.register('waiting', { required: errorMessage })}
-            onClick={() => updateValue(option3)}
-            type='radio'
-            name='waiting'
-            value={option3}
-            className='w-6 h-6'
-          />
-          <span>{option3}</span>
-        </label>
+        <RadioButton
+          target='waiting'
+          register={props.register}
+          value={option1}
+        />
+        <RadioButton
+          target='waiting'
+          register={props.register}
+          value={option2}
+        />
+        <RadioButton
+          target='waiting'
+          register={props.register}
+          value={option3}
+        />
         {props.errors.waiting && <ErrorMessage text={errorMessage} />}
       </RadioInputWrapper>
-      {props.formState.stage === option2 && (
+      {props.formState.waiting === option2 && (
         <div className='pl-12'>
           <p className='text-xl font-normal text-charcoal'>
             👉
@@ -60,7 +40,7 @@ function Waiting(props) {
           </p>
         </div>
       )}
-      {props.formState.stage === option3 && (
+      {props.formState.waiting === option3 && (
         <div className='pl-12'>
           <p className='text-xl font-normal text-charcoal'>
             ახალი პროტოკოლით კოვიდის გადატანიდან 1

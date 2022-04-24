@@ -13,7 +13,6 @@ function Covid(props) {
     register,
     handleSubmit,
     watch,
-    setValue,
     unregister,
     formState: { errors, isValid },
   } = useForm({
@@ -38,24 +37,18 @@ function Covid(props) {
         className='flex flex-col gap-14 w-168'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <HadCovid
-          errors={errors}
-          register={register}
-          setValue={setValue}
-          unregister={unregister}
-        />
-        {inputState.HadCovid === 'YES' && (
+        <HadCovid errors={errors} register={register} unregister={unregister} />
+        {inputState.HadCovid === 'კი' && (
           <Antibodies
             errors={errors}
             register={register}
-            setValue={setValue}
             unregister={unregister}
           />
         )}
-        {inputState.antibodies === 'NO' && (
+        {inputState.antibodies === 'არა' && (
           <Date register={register} errors={errors} />
         )}
-        {inputState.antibodies === 'YES' && <Count register={register} />}
+        {inputState.antibodies === 'კი' && <Count register={register} />}
         <NavigationArrors
           back='/Identification'
           next='/Vaccinated'

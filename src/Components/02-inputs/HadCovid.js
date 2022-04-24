@@ -1,9 +1,8 @@
-import ErrorMessage from '../ErrorMessage';
 import RadioInputWrapper from '../RadioInputWrapper';
+import ErrorMessage from '../ErrorMessage';
 function HadCovid(props) {
-  const updateValue = (value) => {
-    props.setValue('HadCovid', value, { shouldValidate: true });
-    if (value !== 'YES') {
+  const unregister = (value) => {
+    if (value !== 'კი') {
       props.unregister('antibodies');
       props.unregister('date');
       props.unregister('count');
@@ -15,11 +14,10 @@ function HadCovid(props) {
     <RadioInputWrapper question='გაქვს გადატანილი Covid-19*?'>
       <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
         <input
-          onClick={() => updateValue('YES')}
+          onClick={() => unregister('კი')}
           {...props.register('HadCovid', { required: errorMessage })}
           type='radio'
-          name='hadCovid'
-          value='YES'
+          value='კი'
           className='w-6 h-6 bg-red-400 text-red-400'
         />
         <span>კი</span>
@@ -28,11 +26,10 @@ function HadCovid(props) {
         <input
           {...props.register('HadCovid', { required: errorMessage })}
           onClick={() => {
-            updateValue('NO');
+            unregister('არა');
           }}
           type='radio'
-          name='hadCovid'
-          value='NO'
+          value='არა'
           className='w-6 h-6'
         />
         <span>არა</span>
@@ -41,11 +38,10 @@ function HadCovid(props) {
         <input
           {...props.register('HadCovid', { required: errorMessage })}
           onClick={() => {
-            updateValue('NOW');
+            unregister('ახლა მაქვს');
           }}
           type='radio'
-          name='hadCovid'
-          value='NOW'
+          value='ახლა მაქვს'
           className='w-6 h-6'
         />
         <span>ახლა მაქვს</span>

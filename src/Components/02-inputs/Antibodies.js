@@ -2,9 +2,8 @@ import RadioInputWrapper from '../RadioInputWrapper';
 import ErrorMessage from '../ErrorMessage';
 
 function Antibodies(props) {
-  const updateValue = (value) => {
-    props.setValue('antibodies', value, { shouldValidate: true });
-    if (value === 'YES') props.unregister('date');
+  const unregister = (value) => {
+    if (value === 'კი') props.unregister('date');
     else {
       props.unregister('count');
       props.unregister('antibody count');
@@ -16,10 +15,9 @@ function Antibodies(props) {
       <label className='flex items-center gap-5  text-xl font-medium text-charcoal'>
         <input
           {...props.register('antibodies', { required: true })}
-          onClick={() => updateValue('YES')}
+          onClick={() => unregister('კი')}
           type='radio'
-          name='anti'
-          value='YES'
+          value='კი'
           className='w-6 h-6 bg-red-400 text-red-400'
         />
         <span>კი</span>
@@ -27,10 +25,9 @@ function Antibodies(props) {
       <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
         <input
           {...props.register('antibodies', { required: true })}
-          onClick={() => updateValue('NO')}
+          onClick={() => unregister('არა')}
           type='radio'
-          name='anti'
-          value='NO'
+          value='არა'
           className='w-6 h-6'
         />
         <span>არა</span>

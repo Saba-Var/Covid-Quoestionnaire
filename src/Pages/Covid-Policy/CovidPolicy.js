@@ -1,18 +1,18 @@
+import PhysicalGathering from '../../Components/04-inputs/PhysicalGathering';
 import NavigationArrors from '../../Components/NavigationArrors';
 import Frequency from '../../Components/04-inputs/Frequency';
+import Opinions from '../../Components/04-inputs/Opinions';
 import WorkDays from '../../Components/04-inputs/WorkDays';
 import HeartIcon from '../../Assets/svg/HeartIcon.svg';
 import Bike from '../../Assets/images/bike.png';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
-import PhysicalGathering from '../../Components/04-inputs/PhysicalGathering';
-import Opinions from '../../Components/04-inputs/Opinions';
+
 function CovidPolicy() {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
@@ -44,10 +44,10 @@ function CovidPolicy() {
           className='flex flex-col gap-14 w-162'
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Frequency register={register} setValue={setValue} errors={errors} />
-          <WorkDays register={register} setValue={setValue} errors={errors} />
-          <PhysicalGathering register={register} setValue={setValue} />
-          <Opinions register={register} setValue={setValue} />
+          <Frequency register={register} errors={errors} />
+          <WorkDays register={register} errors={errors} />
+          <PhysicalGathering register={register} />
+          <Opinions register={register} />
           <button className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'>
             დასრულება
           </button>

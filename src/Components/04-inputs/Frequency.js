@@ -1,53 +1,30 @@
 import RadioInputWrapper from '../../Components/RadioInputWrapper';
+import RadioButton from '../RadioButton';
 import ErrorMessage from '../ErrorMessage';
 
 function Frequency(props) {
-  const updateValue = (value) => {
-    props.setValue('frequency', value, { shouldValidate: true });
-  };
-  const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
-    <RadioInputWrapper question='უკვე აცრილი ხარ?*'>
-      <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('frequency', { required: errorMessage })}
-          onClick={() => updateValue('კვირაში ორჯერ')}
-          type='radio'
-          name='frequency'
-          className='w-6 h-6 bg-red-400 text-red-400'
-        />
-        <span>კვირაში ორჯერ</span>
-      </label>
-      <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('frequency', { required: errorMessage })}
-          onClick={() => updateValue('კვირაში ერთხელ')}
-          type='radio'
-          name='frequency'
-          className='w-6 h-6'
-        />
-        <span>კვირაში ერთხელ</span>
-      </label>
-      <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('frequency', { required: errorMessage })}
-          onClick={() => updateValue('ორ კვირაში ერთხელ')}
-          type='radio'
-          name='frequency'
-          className='w-6 h-6'
-        />
-        <span>ორ კვირაში ერთხელ</span>
-      </label>
-      <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
-        <input
-          {...props.register('frequency', { required: errorMessage })}
-          onClick={() => updateValue('თვეში ერთხელ')}
-          type='radio'
-          name='frequency'
-          className='w-6 h-6'
-        />
-        <span>თვეში ერთხელ</span>
-      </label>
+    <RadioInputWrapper question='რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*'>
+      <RadioButton
+        target='frequency'
+        register={props.register}
+        value='კვირაში ორჯერ'
+      />
+      <RadioButton
+        target='frequency'
+        register={props.register}
+        value='კვირაში ერთხელ'
+      />
+      <RadioButton
+        target='frequency'
+        register={props.register}
+        value='ორ კვირაში ერთხელ'
+      />
+      <RadioButton
+        target='frequency'
+        register={props.register}
+        value='თვეში ერთხელ'
+      />
       {props.errors.frequency && (
         <ErrorMessage text='ამ ველის შევსება სავალდებულოა' />
       )}
