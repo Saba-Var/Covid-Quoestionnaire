@@ -14,6 +14,10 @@ const reducer = (state, action) => {
       state.vaccinated = action.newState;
       return state;
     }
+    case 'covidPolicy': {
+      state.covidPolicy = action.newState;
+      return state;
+    }
     default:
       return state;
   }
@@ -23,6 +27,12 @@ const initialState = {
   identification: { firstName: '', lastName: '', email: '' },
   covid: { HadCovid: '', count: '', Antibodies: '', date: '' },
   vaccinated: { HadVaccinated: '', stage: '', waiting: '' },
+  covidPolicy: {
+    frequency: '',
+    workDays: '',
+    physicalGathering: '',
+    opinions: '',
+  },
 };
 
 const FormContext = React.createContext();

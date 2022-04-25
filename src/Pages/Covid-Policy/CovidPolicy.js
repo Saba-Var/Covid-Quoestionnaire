@@ -4,13 +4,26 @@ import Frequency from '../../Components/04-inputs/Frequency';
 import Opinions from '../../Components/04-inputs/Opinions';
 import WorkDays from '../../Components/04-inputs/WorkDays';
 import HeartIcon from '../../Assets/svg/HeartIcon.svg';
+import FormContext from '../../context/form-context';
 import Bike from '../../Assets/images/bike.png';
+import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
 
 function CovidPolicy() {
+  const ctx = useContext(FormContext);
+  useEffect(() => {
+    setValue('physicalGathering', ctx.state.covidPolicy.physicalGathering);
+    setValue('frequency', ctx.state.covidPolicy.frequency);
+    setValue('opinions', ctx.state.covidPolicy.opinions);
+    setValue('workDays', ctx.state.covidPolicy.workDays);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const {
+    setValue,
+    watch,
     register,
     handleSubmit,
     formState: { errors },
@@ -24,10 +37,18 @@ function CovidPolicy() {
     },
   });
 
+  console.log(ctx.state.covidPolicy);
+  useEffect(() => {
+    const subscription = watch((data) => {
+      ctx.dispatch({ type: 'covidPolicy', newState: data });
+    });
+
+    return () => subscription.unsubscribe();
+  }, [ctx, watch]);
+
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
-
   return (
     <div className='bg-gray h-492'>
       <Card>
