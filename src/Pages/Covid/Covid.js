@@ -3,13 +3,25 @@ import NavigationArrors from '../../Components/NavigationArrors';
 import Antibodies from '../../Components/02-inputs/Antibodies';
 import HadCovid from '../../Components/02-inputs/HadCovid';
 import Count from '../../Components/02-inputs/Count';
+import FormContext from '../../context/form-context';
 import Date from '../../Components/02-inputs/Date';
+import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
 
 function Covid(props) {
+  const ctx = useContext(FormContext);
+  useEffect(() => {
+    setValue('HadCovid', ctx.state.covid.HadCovid);
+    setValue('count', ctx.state.covid.count);
+    setValue('antibody count', ctx.state.covid['antibody count']);
+    setValue('date', ctx.state.covid.date);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const {
+    setValue,
     register,
     handleSubmit,
     watch,
@@ -25,10 +37,16 @@ function Covid(props) {
     },
   });
 
+  useEffect(() => {
+    const subscription = watch((data) => {
+      ctx.dispatch({ type: 'covid', newState: data });
+    });
+    return () => subscription.unsubscribe();
+  }, [ctx, watch]);
+
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
-  const inputState = watch();
 
   return (
     <Card>
@@ -38,17 +56,17 @@ function Covid(props) {
         onSubmit={handleSubmit(onSubmit)}
       >
         <HadCovid errors={errors} register={register} unregister={unregister} />
-        {inputState.HadCovid === 'კი' && (
+        {ctx.state.covid.HadCovid === 'კი ' && (
           <Antibodies
             errors={errors}
             register={register}
             unregister={unregister}
           />
         )}
-        {inputState.antibodies === 'არა' && (
+        {ctx.state.covid.antibodies === 'არა' && (
           <Date register={register} errors={errors} />
         )}
-        {inputState.antibodies === 'კი' && <Count register={register} />}
+        {ctx.state.covid.antibodies === 'კი' && <Count register={register} />}
         <NavigationArrors
           back='/Identification'
           next='/Vaccinated'

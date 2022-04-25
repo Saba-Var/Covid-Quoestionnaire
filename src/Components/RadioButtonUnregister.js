@@ -27,6 +27,7 @@ function RadioButtonUnregister(props) {
         value={props.value}
         type='radio'
         className='w-6 h-6'
+        defaultChecked={props.value === props.checked}
       />
       <span>{props.value}</span>
     </label>
