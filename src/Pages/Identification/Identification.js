@@ -1,25 +1,45 @@
+import NavigationArrors from '../../Components/NavigationArrors';
 import FirstName from '../../Components/01-Inputs/FirstName';
 import illustration from '../../Assets/images/boy&girl.png';
 import LastName from '../../Components/01-Inputs/LastName';
 import Email from '../../Components/01-Inputs/Email';
+import FormContext from '../../context/form-context';
+import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
-import NavigationArrors from '../../Components/NavigationArrors';
 
 function Identification() {
+  const ctx = useContext(FormContext);
+
+  useEffect(() => {
+    setValue('firstName', ctx.state.identification.firstName);
+    setValue('lastName', ctx.state.identification.lastName);
+    setValue('email', ctx.state.identification.email);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const {
+    watch,
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isValid },
   } = useForm({
-    mode: 'onChange',
+    mode: 'all',
     defaultValues: {
       firstName: '',
       lastName: '',
       email: '',
     },
   });
+
+  useEffect(() => {
+    const subscription = watch((data) => {
+      ctx.dispatch({ type: 'identification', newState: data });
+    });
+    return () => subscription.unsubscribe();
+  }, [ctx, watch]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -42,6 +62,7 @@ function Identification() {
             errors={errors}
             register={register}
             minLength={minLength}
+            setValue={setValue}
             onlyLetters={onlyLetters}
           />
           <LastName
