@@ -3,21 +3,22 @@ import NavigationArrors from '../../Components/NavigationArrors';
 import Frequency from '../../Components/04-inputs/Frequency';
 import Opinions from '../../Components/04-inputs/Opinions';
 import WorkDays from '../../Components/04-inputs/WorkDays';
-import HeartIcon from '../../Assets/svg/HeartIcon.svg';
 import FormContext from '../../context/form-context';
-import Bike from '../../Assets/images/bike.png';
+import Image04 from '../../Components/Image04';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
 
 function CovidPolicy() {
-  const ctx = useContext(FormContext);
+  const ctx = useContext(FormContext).state.covidPolicy;
+  const dispatch = useContext(FormContext).dispatch;
+
   useEffect(() => {
-    setValue('physicalGathering', ctx.state.covidPolicy.physicalGathering);
-    setValue('frequency', ctx.state.covidPolicy.frequency);
-    setValue('opinions', ctx.state.covidPolicy.opinions);
-    setValue('workDays', ctx.state.covidPolicy.workDays);
+    setValue('physicalGathering', ctx.physicalGathering);
+    setValue('frequency', ctx.frequency);
+    setValue('opinions', ctx.opinions);
+    setValue('workDays', ctx.workDays);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -39,11 +40,10 @@ function CovidPolicy() {
 
   useEffect(() => {
     const subscription = watch((data) => {
-      ctx.dispatch({ type: 'covidPolicy', newState: data });
+      dispatch({ type: 'covidPolicy', newState: data });
     });
-
     return () => subscription.unsubscribe();
-  }, [ctx, watch]);
+  }, [ctx, dispatch, watch]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -74,14 +74,7 @@ function CovidPolicy() {
         </form>
         <NavigationArrors back='/Vaccinated' top={'pt-248'} />
       </Card>
-      <div className='absolute right-48 top-28 '>
-        <img src={Bike} alt='boy with bike' className='pt-32' />
-        <img
-          src={HeartIcon}
-          alt='heart icon'
-          className='w-48 z-10 absolute top-48 left-24 mix-blend-multiply'
-        />
-      </div>
+      <Image04 />
     </div>
   );
 }
