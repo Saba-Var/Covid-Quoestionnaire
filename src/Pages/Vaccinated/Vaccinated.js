@@ -3,12 +3,22 @@ import NavigationArrors from '../../Components/NavigationArrors';
 import WhichStage from '../../Components/03-inputs/WhichStage';
 import Waiting from '../../Components/03-inputs/Waiting';
 import DoctorImg from '../../Assets/images/doctor.png';
+import FormContext from '../../context/form-context';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
+import { useContext } from 'react';
+import { useEffect } from 'react';
 import Card from '../../UI/Card';
-
 function Vaccinated() {
+  const ctx = useContext(FormContext);
+  useEffect(() => {
+    setValue('HadVaccinated', ctx.state.vaccinated.HadVaccinated);
+    setValue('stage', ctx.state.vaccinated.stage);
+    setValue('waiting', ctx.state.vaccinated.waiting);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const {
+    setValue,
     register,
     handleSubmit,
     watch,
@@ -17,11 +27,18 @@ function Vaccinated() {
   } = useForm({
     mode: 'onChange',
     defaultValues: {
-      hadVaccinated: '',
+      HadVaccinated: '',
       stage: '',
       waiting: '',
     },
   });
+  useEffect(() => {
+    const subscription = watch((data) => {
+      ctx.dispatch({ type: 'vaccinated', newState: data });
+    });
+    return () => subscription.unsubscribe();
+  }, [ctx, watch]);
+
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
@@ -38,14 +55,14 @@ function Vaccinated() {
           unregister={unregister}
           errors={errors}
         />
-        {formState.hadVaccinated === 'კი' && (
+        {formState.HadVaccinated === 'კი' && (
           <WhichStage
             register={register}
             formState={formState}
             errors={errors}
           />
         )}
-        {formState.hadVaccinated === 'არა' && (
+        {formState.HadVaccinated === 'არა' && (
           <Waiting register={register} formState={formState} errors={errors} />
         )}
         <NavigationArrors

@@ -8,7 +8,7 @@ function HadVaccinated(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   const hookForm = {
     register: props.register,
-    component: 'Antibodies',
+    component: 'HadVaccinated',
     unregister: props.unregister,
     checked: ctx.state.covid.HadCovid,
   };
@@ -16,7 +16,7 @@ function HadVaccinated(props) {
     <RadioInputContainer question='უკვე აცრილი ხარ?*'>
       <RadioButtonUnregister value='კი' hookForm={hookForm} />
       <RadioButtonUnregister value='არა' hookForm={hookForm} />
-      {props.errors.hadVaccinated && <ErrorMessage text={errorMessage} />}
+      {props.errors.HadVaccinated && <ErrorMessage text={errorMessage} />}
     </RadioInputContainer>
   );
 }
