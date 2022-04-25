@@ -11,12 +11,13 @@ import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
 
 function Covid(props) {
-  const ctx = useContext(FormContext);
+  const ctx = useContext(FormContext).state.covid;
+  const dispatch = useContext(FormContext).dispatch;
   useEffect(() => {
-    setValue('HadCovid', ctx.state.covid.HadCovid);
-    setValue('count', ctx.state.covid.count);
-    setValue('antibody count', ctx.state.covid['antibody count']);
-    setValue('date', ctx.state.covid.date);
+    setValue('HadCovid', ctx.HadCovid);
+    setValue('count', ctx.count);
+    setValue('antibody count', ctx['antibody count']);
+    setValue('date', ctx.date);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const {
@@ -38,10 +39,10 @@ function Covid(props) {
 
   useEffect(() => {
     const subscription = watch((data) => {
-      ctx.dispatch({ type: 'covid', newState: data });
+      dispatch({ type: 'covid', newState: data });
     });
     return () => subscription.unsubscribe();
-  }, [ctx, watch]);
+  }, [ctx, dispatch, watch]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -55,17 +56,17 @@ function Covid(props) {
         onSubmit={handleSubmit(onSubmit)}
       >
         <HadCovid errors={errors} register={register} unregister={unregister} />
-        {ctx.state.covid.HadCovid === 'კი ' && (
+        {ctx.HadCovid === 'კი ' && (
           <Antibodies
             errors={errors}
             register={register}
             unregister={unregister}
           />
         )}
-        {ctx.state.covid.Antibodies === 'არა' && (
+        {ctx.Antibodies === 'არა' && (
           <Date register={register} errors={errors} />
         )}
-        {ctx.state.covid.Antibodies === 'კი' && <Count register={register} />}
+        {ctx.Antibodies === 'კი' && <Count register={register} />}
         <NavigationArrors
           back='/Identification'
           next='/Vaccinated'
