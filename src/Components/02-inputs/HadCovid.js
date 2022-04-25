@@ -6,33 +6,19 @@ import { useContext } from 'react';
 
 function HadCovid(props) {
   const ctx = useContext(FormContext);
+  const hookForm = {
+    register: props.register,
+    component: 'HadCovid',
+    unregister: props.unregister,
+    checked: ctx.state.covid.HadCovid,
+  };
+
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <RadioInputContainer question='გაქვს გადატანილი Covid-19*?'>
-      <RadioButtonUnregister
-        target='HadCovid'
-        value='კი '
-        component='HadCovid'
-        unregister={props.unregister}
-        register={props.register}
-        checked={ctx.state.covid.HadCovid}
-      />
-      <RadioButtonUnregister
-        target='HadCovid'
-        value='არა'
-        component='HadCovid'
-        unregister={props.unregister}
-        register={props.register}
-        checked={ctx.state.covid.HadCovid}
-      />
-      <RadioButtonUnregister
-        target='HadCovid'
-        value='ახლა მაქვს'
-        component='HadCovid'
-        unregister={props.unregister}
-        register={props.register}
-        checked={ctx.state.covid.HadCovid}
-      />
+      <RadioButtonUnregister value='კი ' hookForm={hookForm} />
+      <RadioButtonUnregister value='არა' hookForm={hookForm} />
+      <RadioButtonUnregister value='ახლა მაქვს' hookForm={hookForm} />
       {props.errors.HadCovid && <ErrorMessage text={errorMessage} />}
     </RadioInputContainer>
   );

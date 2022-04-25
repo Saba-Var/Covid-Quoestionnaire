@@ -17,7 +17,7 @@ const reducer = (state, action) => {
 
 const initialState = {
   identification: { firstName: '', lastName: '', email: '' },
-  covid: { HadCovid: '', count: '', antibodies: '', date: '' },
+  covid: { HadCovid: '', count: '', Antibodies: '', date: '' },
 };
 
 const FormContext = React.createContext();

@@ -1,33 +1,37 @@
 function RadioButtonUnregister(props) {
+  const hookForm = props.hookForm;
   const unregister = (value) => {
-    if (props.component === 'Antibodies') {
-      if (value === 'კი') props.unregister('date');
+    if (hookForm.component === 'Antibodies') {
+      if (value === 'კი') hookForm.unregister('date');
       else {
-        props.unregister('count');
-        props.unregister('antibody count');
+        hookForm.unregister('count');
+        hookForm.unregister('antibody count');
       }
-    } else if (props.component === 'HadCovid') {
+    } else if (hookForm.component === 'HadCovid') {
       if (value !== 'კი') {
-        props.unregister('antibodies');
-        props.unregister('date');
-        props.unregister('count');
-        props.unregister('antibody count');
+        hookForm.unregister('Antibodies');
+        hookForm.unregister('date');
+        hookForm.unregister('count');
+        hookForm.unregister('antibody count');
       }
     } else {
-      if (value === 'კი') props.unregister('waiting');
-      else props.unregister('stage');
+      if (value === 'კი') hookForm.unregister('waiting');
+      else hookForm.unregister('stage');
     }
   };
+
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
       <input
-        {...props.register(props.target, { required: errorMessage })}
+        {...hookForm.register(hookForm.component, {
+          required: errorMessage,
+        })}
         onClick={() => unregister(props.value)}
         value={props.value}
         type='radio'
         className='w-6 h-6'
-        defaultChecked={props.value === props.checked}
+        defaultChecked={props.value === hookForm.checked}
       />
       <span>{props.value}</span>
     </label>

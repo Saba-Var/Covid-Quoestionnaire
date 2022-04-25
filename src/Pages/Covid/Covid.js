@@ -19,7 +19,6 @@ function Covid(props) {
     setValue('date', ctx.state.covid.date);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const {
     setValue,
     register,
@@ -32,7 +31,7 @@ function Covid(props) {
     defaultValues: {
       HadCovid: '',
       count: '',
-      antibodies: '',
+      Antibodies: '',
       date: '',
     },
   });
@@ -63,10 +62,10 @@ function Covid(props) {
             unregister={unregister}
           />
         )}
-        {ctx.state.covid.antibodies === 'არა' && (
+        {ctx.state.covid.Antibodies === 'არა' && (
           <Date register={register} errors={errors} />
         )}
-        {ctx.state.covid.antibodies === 'კი' && <Count register={register} />}
+        {ctx.state.covid.Antibodies === 'კი' && <Count register={register} />}
         <NavigationArrors
           back='/Identification'
           next='/Vaccinated'
