@@ -1,21 +1,21 @@
 import NavigationArrors from '../../Components/NavigationArrors';
 import FirstName from '../../Components/01-Inputs/FirstName';
-import illustration from '../../Assets/images/boy&girl.png';
 import LastName from '../../Components/01-Inputs/LastName';
 import Email from '../../Components/01-Inputs/Email';
 import FormContext from '../../context/form-context';
 import { useContext, useEffect } from 'react';
+import Image01 from '../../Components/Image01';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
 
 function Identification() {
-  const ctx = useContext(FormContext);
-
+  const ctx = useContext(FormContext).state.identification;
+  const dispatch = useContext(FormContext).dispatch;
   useEffect(() => {
-    setValue('firstName', ctx.state.identification.firstName);
-    setValue('lastName', ctx.state.identification.lastName);
-    setValue('email', ctx.state.identification.email);
+    setValue('firstName', ctx.firstName);
+    setValue('lastName', ctx.lastName);
+    setValue('email', ctx.email);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,54 +36,45 @@ function Identification() {
 
   useEffect(() => {
     const subscription = watch((data) => {
-      ctx.dispatch({ type: 'identification', newState: data });
+      dispatch({ type: 'identification', newState: data });
     });
     return () => subscription.unsubscribe();
-  }, [ctx, watch]);
+  }, [dispatch, watch]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
 
-  //validation for input fields
-  const errStr = 'ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან';
   const minLength = (value, target) =>
-    value.trim().length >= 2 || `${target} ${errStr}`;
+    value.trim().length >= 2 ||
+    `${target} ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან`;
 
   const onlyLetters = (value, target) =>
     !/\d/.test(value) || `${target} ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`;
+
+  const hookForm = {
+    errors,
+    register,
+    minLength,
+    onlyLetters,
+  };
 
   return (
     <Card>
       <Header page='1' />
       <div className='flex justify-between'>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FirstName
-            errors={errors}
-            register={register}
-            minLength={minLength}
-            setValue={setValue}
-            onlyLetters={onlyLetters}
-          />
-          <LastName
-            errors={errors}
-            register={register}
-            minLength={minLength}
-            onlyLetters={onlyLetters}
-          />
+          <FirstName hookForm={hookForm} />
+          <LastName hookForm={hookForm} />
           <Email errors={errors} register={register} />
           <div className='border-t-[1px] w-fit pt-4 mt-12'>
             <p className='text-slate-500'>
               *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
             </p>
           </div>
-
           <NavigationArrors isValid={isValid} top={'pt-4'} next='/Covid' />
         </form>
-        <div className='absolute right-40 top-36 '>
-          <img src={illustration} alt='boy and girl' className='max-w-4xl' />
-          <div className='h-[75px] w-[622px] z-30 bg-yellow left-1/2 absolute translate-x-[-50%] top-56 mix-blend-darken'></div>
-        </div>
+        <Image01 />
       </div>
     </Card>
   );

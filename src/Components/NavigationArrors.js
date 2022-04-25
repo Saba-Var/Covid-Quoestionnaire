@@ -16,7 +16,7 @@ function NavigationArrors(props) {
             <img
               src={Arrow}
               alt='arrow icon'
-              className='w-4 hover:cursor-pointer z-10 rotate-180'
+              className='w-4 hover:cursor-pointer hover:w-5 z-10 rotate-180'
             />
           </button>
         </Link>
@@ -28,7 +28,7 @@ function NavigationArrors(props) {
               <img
                 src={Arrow}
                 alt='arrow icon'
-                className='w-4 hover:cursor-pointer z-10'
+                className='w-4 hover:cursor-pointer hover:w-5 z-10'
               />
             </button>
           </Link>
@@ -37,7 +37,7 @@ function NavigationArrors(props) {
             <img
               src={Arrow}
               alt='arrow icon'
-              className='w-4 hover:cursor-pointer z-10'
+              className='w-4 hover:cursor-pointer hover:w-5 z-10'
             />
           </button>
         ))}
