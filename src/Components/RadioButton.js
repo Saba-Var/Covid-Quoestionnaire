@@ -1,12 +1,14 @@
 function RadioButton(props) {
+  const inputData = props.inputData;
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <label className='flex items-center gap-5 text-xl font-medium text-charcoal'>
       <input
-        {...props.register(props.target, { required: errorMessage })}
+        {...inputData.register(inputData.target, { required: errorMessage })}
         value={props.value}
         type='radio'
         className='w-6 h-6'
+        defaultChecked={props.value === inputData.checked}
       />
       <span>{props.value}</span>
     </label>

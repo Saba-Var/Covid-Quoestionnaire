@@ -37,7 +37,6 @@ function CovidPolicy() {
     },
   });
 
-  console.log(ctx.state.covidPolicy);
   useEffect(() => {
     const subscription = watch((data) => {
       ctx.dispatch({ type: 'covidPolicy', newState: data });

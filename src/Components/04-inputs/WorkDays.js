@@ -1,15 +1,23 @@
 import RadioInputContainer from '../RadioInputContainer';
-import RadioButton from '../RadioButton';
+import FormContext from '../../context/form-context';
 import ErrorMessage from '../ErrorMessage';
+import RadioButton from '../RadioButton';
+import { useContext } from 'react';
 function WorkDays(props) {
+  const ctx = useContext(FormContext);
+  const inputData = {
+    checked: ctx.state.vaccinated.workDays,
+    register: props.register,
+    target: 'workDays',
+  };
   return (
     <RadioInputContainer question='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'>
-      <RadioButton target='workDays' register={props.register} value='0' />
-      <RadioButton target='workDays' register={props.register} value='1' />
-      <RadioButton target='workDays' register={props.register} value='2' />
-      <RadioButton target='workDays' register={props.register} value='3' />
-      <RadioButton target='workDays' register={props.register} value='4' />
-      <RadioButton target='workDays' register={props.register} value='5' />
+      <RadioButton value='0' inputData={inputData} />
+      <RadioButton value='1' inputData={inputData} />
+      <RadioButton value='2' inputData={inputData} />
+      <RadioButton value='3' inputData={inputData} />
+      <RadioButton value='4' inputData={inputData} />
+      <RadioButton value='5' inputData={inputData} />
       {props.errors.workDays && (
         <ErrorMessage text='ამ ველის შევსება სავალდებულოა' />
       )}

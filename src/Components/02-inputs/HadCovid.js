@@ -7,10 +7,10 @@ import { useContext } from 'react';
 function HadCovid(props) {
   const ctx = useContext(FormContext);
   const hookForm = {
+    checked: ctx.state.covid.HadCovid,
+    unregister: props.unregister,
     register: props.register,
     component: 'HadCovid',
-    unregister: props.unregister,
-    checked: ctx.state.covid.HadCovid,
   };
 
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';

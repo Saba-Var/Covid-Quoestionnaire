@@ -9,6 +9,7 @@ import Header from '../../Layouts/Header';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import Card from '../../UI/Card';
+
 function Vaccinated() {
   const ctx = useContext(FormContext);
   useEffect(() => {
@@ -32,6 +33,7 @@ function Vaccinated() {
       waiting: '',
     },
   });
+
   useEffect(() => {
     const subscription = watch((data) => {
       ctx.dispatch({ type: 'vaccinated', newState: data });
