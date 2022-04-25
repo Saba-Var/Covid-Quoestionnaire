@@ -1,4 +1,3 @@
-import HighTemperature from '../../Assets/images/highTemperature.png';
 import NavigationArrors from '../../Components/NavigationArrors';
 import Antibodies from '../../Components/02-inputs/Antibodies';
 import HadCovid from '../../Components/02-inputs/HadCovid';
@@ -9,6 +8,7 @@ import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
+import Image02 from '../../Components/Image02';
 
 function Covid(props) {
   const ctx = useContext(FormContext).state.covid;
@@ -74,10 +74,7 @@ function Covid(props) {
           top={'pt-12'}
         />
       </form>
-      <div className='absolute right-40 top-28 '>
-        <img src={HighTemperature} alt='sick boy' className='pt-8' />
-        <div className='bg-red-500 h-56 w-56 rounded-full absolute top-72 left-24 mix-blend-multiply hover:animate-flip-scale-up-hor'></div>
-      </div>
+      <Image02 />
     </Card>
   );
 }
