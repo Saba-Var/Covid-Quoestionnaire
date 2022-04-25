@@ -10,13 +10,15 @@ function HadVaccinated(props) {
     checked: ctx.state.covid.HadCovid,
     unregister: props.unregister,
     component: 'HadVaccinated',
-    register: props.register,
+    register: props.hookForm.register,
   };
   return (
     <RadioInputContainer question='უკვე აცრილი ხარ?*'>
       <RadioButtonUnregister value='კი' hookForm={hookForm} />
       <RadioButtonUnregister value='არა' hookForm={hookForm} />
-      {props.errors.HadVaccinated && <ErrorMessage text={errorMessage} />}
+      {props.hookForm.errors.HadVaccinated && (
+        <ErrorMessage text={errorMessage} />
+      )}
     </RadioInputContainer>
   );
 }

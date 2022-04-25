@@ -45,6 +45,10 @@ function Vaccinated() {
     e.preventDefault();
   };
   const formState = watch();
+  const hookForm = {
+    register,
+    errors,
+  };
   return (
     <Card>
       <Header page='3' />
@@ -52,20 +56,12 @@ function Vaccinated() {
         className='flex flex-col gap-14 w-168'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <HadVaccinated
-          register={register}
-          unregister={unregister}
-          errors={errors}
-        />
+        <HadVaccinated hookForm={hookForm} unregister={unregister} />
         {formState.HadVaccinated === 'კი' && (
-          <WhichStage
-            register={register}
-            formState={formState}
-            errors={errors}
-          />
+          <WhichStage formState={formState} hookForm={hookForm} />
         )}
         {formState.HadVaccinated === 'არა' && (
-          <Waiting register={register} formState={formState} errors={errors} />
+          <Waiting formState={formState} hookForm={hookForm} />
         )}
         <NavigationArrors
           back='/Covid'

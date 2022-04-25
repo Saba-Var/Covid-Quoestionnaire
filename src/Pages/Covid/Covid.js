@@ -4,11 +4,11 @@ import HadCovid from '../../Components/02-inputs/HadCovid';
 import Count from '../../Components/02-inputs/Count';
 import FormContext from '../../context/form-context';
 import Date from '../../Components/02-inputs/Date';
+import Image02 from '../../Components/Image02';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from '../../Layouts/Header';
 import Card from '../../UI/Card';
-import Image02 from '../../Components/Image02';
 
 function Covid(props) {
   const ctx = useContext(FormContext).state.covid;
