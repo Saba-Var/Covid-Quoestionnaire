@@ -15,15 +15,19 @@ function StartingPage() {
         <img
           src={start}
           alt='Redberry logo'
-          className='w-0 h-0 animate-shrink-center absolute'
+          className='w-0 h-0 animate-shrink-center absolute z-10'
         />
         <img
           src={RedberryLogo}
           alt='Redberry logo'
-          className='w-16 h-16 mb-24 hover:animate-rotate-center'
+          className='w-16 h-16 mb-24 hover:animate-rotate-center animat'
         />
         <div onMouseEnter={hoverHandler} onMouseLeave={mouseLeaveHandler}>
-          <StartButton hover={hover} />
+          <div className='overflow-hidden h-20 animate-hidden'>
+            <div className=' animate-slide-down  '>
+              <StartButton hover={hover} />
+            </div>
+          </div>
         </div>
       </div>
     </Card>

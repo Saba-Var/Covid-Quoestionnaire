@@ -12,8 +12,28 @@ module.exports = {
           'rotate-center 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955)   both',
         'flip-scale-up-hor': 'flip-scale-up-hor 0.5s linear   both',
         'shrink-center': 'shrink-center 0.8s ease-out 0.08s 1 normal none',
+        'slide-down': 'slide-down 1s ease-out 1.5s 1 normal none',
+        hidden: 'hidden 1.5s ease normal none',
       },
       keyframes: {
+        hidden: {
+          from: {
+            opacity: '0',
+          },
+          to: {
+            opacity: '0',
+          },
+        },
+        'slide-down': {
+          from: {
+            transform: 'translateY(-65px)',
+            opacity: '0',
+          },
+          to: {
+            transform: 'translateY(0px)',
+            opacity: '1',
+          },
+        },
         'shrink-center': {
           from: {
             width: '100%',
