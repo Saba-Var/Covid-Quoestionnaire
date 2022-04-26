@@ -2,6 +2,13 @@ import Arrow from '../Assets/svg/Arrow.svg';
 import { Link } from 'react-router-dom';
 
 function NavigationArrors(props) {
+  const arrow = (
+    <img
+      src={Arrow}
+      alt='arrow icon'
+      className='w-4 hover:cursor-pointer hover:w-5 z-10'
+    />
+  );
   return (
     <div
       className={`absolute ${
@@ -12,34 +19,16 @@ function NavigationArrors(props) {
     >
       {props.back && (
         <Link to={props.back}>
-          <button>
-            <img
-              src={Arrow}
-              alt='arrow icon'
-              className='w-4 hover:cursor-pointer hover:w-5 z-10 rotate-180'
-            />
-          </button>
+          <div className='rotate-180'>{arrow}</div>
         </Link>
       )}
       {props.next &&
         (props.isValid ? (
           <Link to={props.next}>
-            <button>
-              <img
-                src={Arrow}
-                alt='arrow icon'
-                className='w-4 hover:cursor-pointer hover:w-5 z-10'
-              />
-            </button>
+            <button>{arrow}</button>
           </Link>
         ) : (
-          <button>
-            <img
-              src={Arrow}
-              alt='arrow icon'
-              className='w-4 hover:cursor-pointer hover:w-5 z-10'
-            />
-          </button>
+          <button>{arrow}</button>
         ))}
     </div>
   );
