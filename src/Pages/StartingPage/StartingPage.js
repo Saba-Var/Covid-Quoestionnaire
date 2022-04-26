@@ -1,7 +1,5 @@
-import StartSvgHover from '../../Assets/svg/StartingQuestionaire-hover.svg';
-import StartSvg from '../../Assets/svg/startingQuestionnaire.svg';
 import RedberryLogo from '../../Assets/images/Redberry-Logo.png';
-import { Link } from 'react-router-dom';
+import StartButton from '../../Components/StartButton';
 import { useState } from 'react';
 import Card from '../../UI/Card';
 
@@ -18,26 +16,8 @@ function StartingPage() {
           alt='Redberry logo'
           className='w-16 h-16 mb-24 hover:animate-rotate-center'
         />
-        <div
-          className=''
-          onMouseEnter={hoverHandler}
-          onMouseLeave={mouseLeaveHandler}
-        >
-          {!hover ? (
-            <img
-              src={StartSvg}
-              alt='start questionnaire button'
-              className='p-4 pt-1 hover:cursor-pointer w-50'
-            />
-          ) : (
-            <Link to='/identification'>
-              <img
-                src={StartSvgHover}
-                alt='start questionnaire button'
-                className='p-4 pt-0 hover:cursor-pointer w-50'
-              />
-            </Link>
-          )}
+        <div onMouseEnter={hoverHandler} onMouseLeave={mouseLeaveHandler}>
+          <StartButton hover={hover} />
         </div>
       </div>
     </Card>
