@@ -64,7 +64,7 @@ function Covid(props) {
           />
         )}
         {ctx.Antibodies === 'არა' && (
-          <Date register={register} errors={errors} />
+          <Date register={register} errors={errors} watch={watch} />
         )}
         {ctx.Antibodies === 'კი' && <Count register={register} />}
         <NavigationArrors

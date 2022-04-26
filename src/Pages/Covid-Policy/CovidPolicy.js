@@ -48,7 +48,7 @@ function CovidPolicy() {
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
-  console.log(useContext(FormContext));
+
   return (
     <div className='bg-gray'>
       <div className='bg-gray h-492'>

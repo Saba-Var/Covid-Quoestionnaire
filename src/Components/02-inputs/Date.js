@@ -1,6 +1,8 @@
 import ErrorMessage from '../ErrorMessage';
 function Date(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
+  const dateState = props.watch().date;
+
   return (
     <div>
       <p className='font-bold text-tiny mb-4'>
@@ -14,6 +16,11 @@ function Date(props) {
         min='2019-11-01'
         className='pl-4 bg-transparent border-[1px] border-charcoal h-12 w-128 px-5 mb-2'
       />
+      {!dateState && (
+        <p className='bg-gray w-36 p-2 text-charcoal absolute bottom-64 left-52'>
+          დდ/თთ/წწ
+        </p>
+      )}
       {props.errors.date && <ErrorMessage text={errorMessage} />}
     </div>
   );
