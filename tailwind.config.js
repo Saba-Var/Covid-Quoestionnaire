@@ -11,8 +11,36 @@ module.exports = {
         'rotate-center':
           'rotate-center 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955)   both',
         'flip-scale-up-hor': 'flip-scale-up-hor 0.5s linear   both',
+        'shrink-center': 'shrink-center 0.8s ease-out 0.08s 1 normal none',
       },
       keyframes: {
+        'shrink-center': {
+          from: {
+            width: '100%',
+            height: '100%',
+            top: '0',
+            left: '0',
+            position: 'fixed',
+          },
+          '40%': {
+            width: '100%',
+            height: '100%',
+            top: '0',
+            position: 'fixed',
+            borderRadius: '0px',
+          },
+          '50%': {
+            borderRadius: '0px',
+          },
+          to: {
+            width: '50px',
+            height: '50px',
+            borderRadius: '100px',
+            top: '320px',
+            display: 'none',
+          },
+        },
+
         'rotate-center': {
           '0%': {
             transform: 'rotate(0)',

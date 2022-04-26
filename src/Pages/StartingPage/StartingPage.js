@@ -1,5 +1,6 @@
 import RedberryLogo from '../../Assets/images/Redberry-Logo.png';
 import StartButton from '../../Components/StartButton';
+import start from '../../Assets/images/start.png';
 import { useState } from 'react';
 import Card from '../../UI/Card';
 
@@ -11,6 +12,11 @@ function StartingPage() {
   return (
     <Card>
       <div className='flex items-center flex-col mt-63.7 hover:cursor-pointer '>
+        <img
+          src={start}
+          alt='Redberry logo'
+          className='w-0 h-0 animate-shrink-center absolute'
+        />
         <img
           src={RedberryLogo}
           alt='Redberry logo'
