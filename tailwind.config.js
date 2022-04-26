@@ -35,6 +35,7 @@ module.exports = {
       },
       fontFamily: {
         anonymous: ['Anonymous Pro', 'monospace'],
+        'BPG-Arial': ['BPG Arial'],
       },
       spacing: {
         22.2: '5.5rem',

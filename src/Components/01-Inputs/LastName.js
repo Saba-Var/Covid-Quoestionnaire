@@ -4,7 +4,7 @@ function LastName(props) {
   const hookForm = props.hookForm;
   return (
     <InputWrapper target={hookForm.errors.lastName}>
-      <label className='font-bold text-tiny '>გვარი*</label>
+      <label className='font-bold text-tiny'>გვარი*</label>
       <input
         {...hookForm.register('lastName', {
           required: `გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან`,

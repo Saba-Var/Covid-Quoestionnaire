@@ -4,8 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BPG Arial';
+  src: url(Assets/font/bpg_arial_2009.ttf);
+  font-style: normal;
+}
+
 @layer components {
   input[type='radio'] {
     @apply accent-charcoal;
+  }
+  html {
+    @apply font-BPG-Arial;
   }
 }
