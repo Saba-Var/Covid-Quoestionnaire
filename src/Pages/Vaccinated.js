@@ -12,12 +12,6 @@ import Card from 'UI/Card';
 
 function Vaccinated() {
   const ctx = useContext(FormContext);
-  useEffect(() => {
-    setValue('HadVaccinated', ctx.state.vaccinated.HadVaccinated);
-    setValue('stage', ctx.state.vaccinated.stage);
-    setValue('waiting', ctx.state.vaccinated.waiting);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const {
     setValue,
     register,
@@ -33,6 +27,17 @@ function Vaccinated() {
       waiting: '',
     },
   });
+
+  useEffect(() => {
+    setValue('HadVaccinated', ctx.state.vaccinated.HadVaccinated);
+    setValue('stage', ctx.state.vaccinated.stage);
+    setValue('waiting', ctx.state.vaccinated.waiting);
+  }, [
+    ctx.state.vaccinated.HadVaccinated,
+    ctx.state.vaccinated.stage,
+    ctx.state.vaccinated.waiting,
+    setValue,
+  ]);
 
   useEffect(() => {
     const subscription = watch((data) => {

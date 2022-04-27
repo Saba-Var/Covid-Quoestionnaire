@@ -13,13 +13,6 @@ import Card from 'UI/Card';
 function Covid(props) {
   const ctx = useContext(FormContext).state.covid;
   const dispatch = useContext(FormContext).dispatch;
-  useEffect(() => {
-    setValue('HadCovid', ctx.HadCovid);
-    setValue('count', ctx.count);
-    setValue('antibody count', ctx['antibody count']);
-    setValue('date', ctx.date);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const {
     setValue,
     register,
@@ -36,6 +29,12 @@ function Covid(props) {
       date: '',
     },
   });
+  useEffect(() => {
+    setValue('HadCovid', ctx.HadCovid);
+    setValue('count', ctx.count);
+    setValue('antibody count', ctx['antibody count']);
+    setValue('date', ctx.date);
+  }, [ctx, setValue]);
 
   useEffect(() => {
     const subscription = watch((data) => {

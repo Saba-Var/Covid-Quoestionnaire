@@ -12,12 +12,12 @@ import Card from 'UI/Card';
 function Identification() {
   const ctx = useContext(FormContext).state.identification;
   const dispatch = useContext(FormContext).dispatch;
+
   useEffect(() => {
     setValue('firstName', ctx.firstName);
     setValue('lastName', ctx.lastName);
     setValue('email', ctx.email);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [ctx.email, ctx.firstName, ctx.lastName]);
 
   const {
     watch,

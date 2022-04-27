@@ -14,14 +14,6 @@ function CovidPolicy() {
   const ctx = useContext(FormContext).state.covidPolicy;
   const dispatch = useContext(FormContext).dispatch;
 
-  useEffect(() => {
-    setValue('physicalGathering', ctx.physicalGathering);
-    setValue('frequency', ctx.frequency);
-    setValue('opinions', ctx.opinions);
-    setValue('workDays', ctx.workDays);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const {
     setValue,
     watch,
@@ -37,6 +29,19 @@ function CovidPolicy() {
       opinions: '',
     },
   });
+
+  useEffect(() => {
+    setValue('physicalGathering', ctx.physicalGathering);
+    setValue('frequency', ctx.frequency);
+    setValue('opinions', ctx.opinions);
+    setValue('workDays', ctx.workDays);
+  }, [
+    ctx.frequency,
+    ctx.opinions,
+    ctx.physicalGathering,
+    ctx.workDays,
+    setValue,
+  ]);
 
   useEffect(() => {
     const subscription = watch((data) => {
