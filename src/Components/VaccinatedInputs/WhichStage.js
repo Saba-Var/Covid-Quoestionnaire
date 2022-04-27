@@ -1,4 +1,4 @@
-import SuggestionYes from 'Components/03-inputs/Suggestion/SuggestionYes';
+import SuggestionYes from 'Components/VaccinatedInputs/Suggestion/SuggestionYes';
 import RadioInputContainer from 'Components/RadioInputContainer';
 import ErrorMessage from 'Components/ErrorMessage';
 import RadioButton from 'Components/RadioButton';

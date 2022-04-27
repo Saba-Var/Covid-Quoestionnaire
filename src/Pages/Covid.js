@@ -1,10 +1,10 @@
 import NavigationArrors from 'Components/NavigationArrors';
-import Antibodies from 'Components/02-inputs/Antibodies';
-import HadCovid from 'Components/02-inputs/HadCovid';
-import Count from 'Components/02-inputs/Count';
+import Antibodies from 'Components/CovidInputs/Antibodies';
+import HadCovid from 'Components/CovidInputs/HadCovid';
+import Count from 'Components/CovidInputs/Count';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
-import Date from 'Components/02-inputs/Date';
+import Date from 'Components/CovidInputs/Date';
 import { useForm } from 'react-hook-form';
 import Image02 from 'Components/Image02';
 import Header from 'Layouts/Header';

@@ -1,7 +1,7 @@
-import HadVaccinated from 'Components/03-inputs/HadVaccinated';
+import HadVaccinated from 'Components/VaccinatedInputs/HadVaccinated';
 import NavigationArrors from 'Components/NavigationArrors';
-import WhichStage from 'Components/03-inputs/WhichStage';
-import Waiting from 'Components/03-inputs/Waiting';
+import WhichStage from 'Components/VaccinatedInputs/WhichStage';
+import Waiting from 'Components/VaccinatedInputs/Waiting';
 import FormContext from 'context/form-context';
 import { useForm } from 'react-hook-form';
 import Image03 from 'Components/Image03';

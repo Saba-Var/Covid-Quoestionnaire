@@ -1,5 +1,5 @@
-import SuggestionNo1 from 'Components/03-inputs/Suggestion/SuggestionNo1';
-import SuggestionNo2 from 'Components/03-inputs/Suggestion/SuggestionNo2';
+import SuggestionNo1 from 'Components/VaccinatedInputs/Suggestion/SuggestionNo1';
+import SuggestionNo2 from 'Components/VaccinatedInputs/Suggestion/SuggestionNo2';
 import RadioInputContainer from 'Components/RadioInputContainer';
 import ErrorMessage from 'Components/ErrorMessage';
 import RadioButton from 'Components/RadioButton';

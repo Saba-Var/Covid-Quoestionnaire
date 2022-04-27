@@ -1,8 +1,8 @@
-import PhysicalGathering from 'Components/04-inputs/PhysicalGathering';
+import PhysicalGathering from 'Components/CovidPolicyInputs/PhysicalGathering';
 import NavigationArrors from 'Components/NavigationArrors';
-import Frequency from 'Components/04-inputs/Frequency';
-import Opinions from 'Components/04-inputs/Opinions';
-import WorkDays from 'Components/04-inputs/WorkDays';
+import Frequency from 'Components/CovidPolicyInputs/Frequency';
+import Opinions from 'Components/CovidPolicyInputs/Opinions';
+import WorkDays from 'Components/CovidPolicyInputs/WorkDays';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';

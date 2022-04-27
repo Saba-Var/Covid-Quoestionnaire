@@ -1,7 +1,7 @@
 import NavigationArrors from 'Components/NavigationArrors';
-import FirstName from 'Components/01-Inputs/FirstName';
-import LastName from 'Components/01-Inputs/LastName';
-import Email from 'Components/01-Inputs/Email';
+import FirstName from 'Components/IdentificationInputs/FirstName';
+import LastName from 'Components/IdentificationInputs/LastName';
+import Email from 'Components/IdentificationInputs/Email';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
