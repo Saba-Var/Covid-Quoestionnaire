@@ -1,14 +1,14 @@
-import NavigationArrors from '../Components/NavigationArrors';
-import Antibodies from '../Components/02-inputs/Antibodies';
-import HadCovid from '../Components/02-inputs/HadCovid';
-import Count from '../Components/02-inputs/Count';
-import FormContext from '../context/form-context';
-import Date from '../Components/02-inputs/Date';
-import Image02 from '../Components/Image02';
+import NavigationArrors from 'Components/NavigationArrors';
+import Antibodies from 'Components/02-inputs/Antibodies';
+import HadCovid from 'Components/02-inputs/HadCovid';
+import Count from 'Components/02-inputs/Count';
+import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
+import Date from 'Components/02-inputs/Date';
 import { useForm } from 'react-hook-form';
-import Header from '../Layouts/Header';
-import Card from '../UI/Card';
+import Image02 from 'Components/Image02';
+import Header from 'Layouts/Header';
+import Card from 'UI/Card';
 
 function Covid(props) {
   const ctx = useContext(FormContext).state.covid;

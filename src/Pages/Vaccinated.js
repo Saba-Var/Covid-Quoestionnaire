@@ -1,14 +1,14 @@
-import HadVaccinated from '../Components/03-inputs/HadVaccinated';
-import NavigationArrors from '../Components/NavigationArrors';
-import WhichStage from '../Components/03-inputs/WhichStage';
-import Waiting from '../Components/03-inputs/Waiting';
-import FormContext from '../context/form-context';
+import HadVaccinated from 'Components/03-inputs/HadVaccinated';
+import NavigationArrors from 'Components/NavigationArrors';
+import WhichStage from 'Components/03-inputs/WhichStage';
+import Waiting from 'Components/03-inputs/Waiting';
+import FormContext from 'context/form-context';
 import { useForm } from 'react-hook-form';
-import Header from '../Layouts/Header';
+import Image03 from 'Components/Image03';
+import Header from 'Layouts/Header';
 import { useContext } from 'react';
-import Image03 from '../Components/Image03';
 import { useEffect } from 'react';
-import Card from '../UI/Card';
+import Card from 'UI/Card';
 
 function Vaccinated() {
   const ctx = useContext(FormContext);

@@ -1,4 +1,4 @@
-import RedberryLogoText from '../Assets/svg/Redberry-Logo(text).svg';
+import RedberryLogoText from 'Assets/svg/Redberry-Logo(text).svg';
 
 function Header(props) {
   return (

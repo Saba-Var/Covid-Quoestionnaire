@@ -1,4 +1,4 @@
-import illustration from '../Assets/images/boy&girl.png';
+import illustration from 'Assets/images/boy&girl.png';
 function Image01() {
   return (
     <div className='absolute right-40 top-36 '>

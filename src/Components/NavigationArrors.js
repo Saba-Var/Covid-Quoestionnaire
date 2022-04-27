@@ -1,4 +1,4 @@
-import Arrow from '../Assets/svg/Arrow.svg';
+import Arrow from 'Assets/svg/Arrow.svg';
 import { Link } from 'react-router-dom';
 
 function NavigationArrors(props) {

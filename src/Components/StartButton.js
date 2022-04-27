@@ -1,5 +1,5 @@
-import startTextHover from '../Assets/svg/startingQuestionaire-hover.svg';
-import startText from '../Assets/svg/startingQuestionnaire.svg';
+import startTextHover from 'Assets/svg/startingQuestionaire-hover.svg';
+import startText from 'Assets/svg/startingQuestionnaire.svg';
 import { Link } from 'react-router-dom';
 
 function StartButton(props) {

@@ -1,5 +1,5 @@
-import DoctorImg from '../Assets/images/doctor.png';
-import star from '../Assets/svg/star.svg';
+import DoctorImg from 'Assets/images/doctor.png';
+import star from 'Assets/svg/star.svg';
 
 function Image03() {
   return (

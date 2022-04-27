@@ -1,4 +1,4 @@
-import ErrorMessage from './ErrorMessage';
+import ErrorMessage from 'Components/ErrorMessage';
 
 function InputWrapper(props) {
   return (

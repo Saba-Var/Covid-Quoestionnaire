@@ -1,9 +1,9 @@
-import RadioInputContainer from '../RadioInputContainer';
-import SuggestionNo1 from './Suggestion/SuggestionNo1';
-import SuggestionNo2 from './Suggestion/SuggestionNo2';
-import FormContext from '../../context/form-context';
-import ErrorMessage from '../ErrorMessage';
-import RadioButton from '../RadioButton';
+import SuggestionNo1 from 'Components/03-inputs/Suggestion/SuggestionNo1';
+import SuggestionNo2 from 'Components/03-inputs/Suggestion/SuggestionNo2';
+import RadioInputContainer from 'Components/RadioInputContainer';
+import ErrorMessage from 'Components/ErrorMessage';
+import RadioButton from 'Components/RadioButton';
+import FormContext from 'context/form-context';
 import { useContext } from 'react';
 
 function Waiting(props) {

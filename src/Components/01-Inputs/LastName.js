@@ -1,4 +1,4 @@
-import InputWrapper from '../InputWrapper';
+import InputWrapper from 'Components/InputWrapper';
 
 function LastName(props) {
   const hookForm = props.hookForm;

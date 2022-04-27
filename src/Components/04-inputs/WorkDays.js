@@ -1,7 +1,7 @@
-import RadioInputContainer from '../RadioInputContainer';
-import FormContext from '../../context/form-context';
-import ErrorMessage from '../ErrorMessage';
-import RadioButton from '../RadioButton';
+import RadioInputContainer from 'Components/RadioInputContainer';
+import ErrorMessage from 'Components/ErrorMessage';
+import RadioButton from 'Components/RadioButton';
+import FormContext from 'context/form-context';
 import { useContext } from 'react';
 function WorkDays(props) {
   const ctx = useContext(FormContext);

@@ -1,4 +1,4 @@
-import HighTemperature from '../Assets/images/highTemperature.png';
+import HighTemperature from 'Assets/images/highTemperature.png';
 function Image02() {
   return (
     <div className='absolute right-40 top-28 '>

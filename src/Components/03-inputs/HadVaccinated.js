@@ -1,7 +1,7 @@
-import RadioButtonUnregister from '../RadioButtonUnregister';
-import RadioInputContainer from '../RadioInputContainer';
-import FormContext from '../../context/form-context';
-import ErrorMessage from '../ErrorMessage';
+import RadioButtonUnregister from 'Components/RadioButtonUnregister';
+import RadioInputContainer from 'Components/RadioInputContainer';
+import ErrorMessage from 'Components/ErrorMessage';
+import FormContext from 'context/form-context';
 import { useContext } from 'react';
 function HadVaccinated(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';

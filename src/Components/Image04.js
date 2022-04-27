@@ -1,5 +1,5 @@
-import HeartIcon from '../Assets/svg/HeartIcon.svg';
-import Bike from '../Assets/images/bike.png';
+import HeartIcon from 'Assets/svg/HeartIcon.svg';
+import Bike from 'Assets/images/bike.png';
 function Image04() {
   return (
     <div className='absolute right-48 top-28 '>

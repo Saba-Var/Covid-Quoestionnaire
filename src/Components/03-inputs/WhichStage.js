@@ -1,8 +1,8 @@
-import RadioInputContainer from '../RadioInputContainer';
-import SuggestionYes from './Suggestion/SuggestionYes';
-import FormContext from '../../context/form-context';
-import ErrorMessage from '../ErrorMessage';
-import RadioButton from '../RadioButton';
+import SuggestionYes from 'Components/03-inputs/Suggestion/SuggestionYes';
+import RadioInputContainer from 'Components/RadioInputContainer';
+import ErrorMessage from 'Components/ErrorMessage';
+import RadioButton from 'Components/RadioButton';
+import FormContext from 'context/form-context';
 import { useContext } from 'react';
 
 function WhichStage(props) {
