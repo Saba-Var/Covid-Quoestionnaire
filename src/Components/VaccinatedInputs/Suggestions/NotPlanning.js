@@ -1,4 +1,4 @@
-function SuggestionNo1() {
+function NotPlanning() {
   return (
     <div className='pl-12'>
       <p className='text-xl font-normal text-charcoal'>
@@ -14,4 +14,4 @@ function SuggestionNo1() {
   );
 }
 
-export default SuggestionNo1;
+export default NotPlanning;

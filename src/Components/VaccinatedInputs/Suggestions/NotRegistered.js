@@ -1,4 +1,4 @@
-function SuggestionYes() {
+function NotRegistered() {
   return (
     <div className='pl-12'>
       <p className='text-xl font-normal text-charcoal'>
@@ -15,4 +15,4 @@ function SuggestionYes() {
   );
 }
 
-export default SuggestionYes;
+export default NotRegistered;

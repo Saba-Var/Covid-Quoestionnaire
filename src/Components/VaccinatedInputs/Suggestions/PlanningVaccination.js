@@ -1,4 +1,4 @@
-function SuggestionNo2() {
+function PlanningVaccination() {
   return (
     <div className='pl-12'>
       <p className='text-xl font-normal text-charcoal'>
@@ -19,4 +19,4 @@ function SuggestionNo2() {
   );
 }
 
-export default SuggestionNo2;
+export default PlanningVaccination;
