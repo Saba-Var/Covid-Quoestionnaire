@@ -1,12 +1,12 @@
 import PhysicalGathering from 'Components/CovidPolicyInputs/PhysicalGathering';
-import NavigationArrors from 'Components/NavigationArrors';
 import Frequency from 'Components/CovidPolicyInputs/Frequency';
 import Opinions from 'Components/CovidPolicyInputs/Opinions';
 import WorkDays from 'Components/CovidPolicyInputs/WorkDays';
+import NavigationArrors from 'Components/NavigationArrors';
+import CovidPolicyImg from 'Components/CovidPolicyImg';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import Image04 from 'Components/Image04';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
 
@@ -75,7 +75,7 @@ function CovidPolicy() {
             </button>
           </form>
         </Card>
-        <Image04 />
+        <CovidPolicyImg />
       </div>
       <div className='h-8 mt-8 pt-8 pb-6'>
         <NavigationArrors back='/Vaccinated' top={'pt-248'} />

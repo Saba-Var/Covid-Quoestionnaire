@@ -1,7 +1,7 @@
 import DoctorImg from 'Assets/images/doctor.png';
 import star from 'Assets/svg/star.svg';
 
-function Image03() {
+function VaccinatedImg() {
   return (
     <>
       <div className='absolute right-40 top-36 '>
@@ -16,4 +16,4 @@ function Image03() {
   );
 }
 
-export default Image03;
+export default VaccinatedImg;

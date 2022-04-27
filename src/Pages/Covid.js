@@ -6,7 +6,7 @@ import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import Date from 'Components/CovidInputs/Date';
 import { useForm } from 'react-hook-form';
-import Image02 from 'Components/Image02';
+import CovidImg from 'Components/CovidImg';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
 
@@ -74,7 +74,7 @@ function Covid(props) {
           top={'pt-12'}
         />
       </form>
-      <Image02 />
+      <CovidImg />
     </Card>
   );
 }

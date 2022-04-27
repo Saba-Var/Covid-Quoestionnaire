@@ -4,7 +4,7 @@ import WhichStage from 'Components/VaccinatedInputs/WhichStage';
 import Waiting from 'Components/VaccinatedInputs/Waiting';
 import FormContext from 'context/form-context';
 import { useForm } from 'react-hook-form';
-import Image03 from 'Components/Image03';
+import VaccinatedImg from 'Components/VaccinatedImg';
 import Header from 'Layouts/Header';
 import { useContext } from 'react';
 import { useEffect } from 'react';
@@ -69,7 +69,7 @@ function Vaccinated() {
           isValid={isValid}
         />
       </form>
-      <Image03 />
+      <VaccinatedImg />
     </Card>
   );
 }

@@ -1,5 +1,5 @@
 import HighTemperature from 'Assets/images/highTemperature.png';
-function Image02() {
+function CovidImg() {
   return (
     <div className='absolute right-40 top-28 '>
       <img src={HighTemperature} alt='sick boy' className='pt-8' />
@@ -8,4 +8,4 @@ function Image02() {
   );
 }
 
-export default Image02;
+export default CovidImg;

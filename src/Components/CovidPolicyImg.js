@@ -1,6 +1,6 @@
 import HeartIcon from 'Assets/svg/HeartIcon.svg';
 import Bike from 'Assets/images/bike.png';
-function Image04() {
+function CovidPolicyImg() {
   return (
     <div className='absolute right-48 top-28 '>
       <img src={Bike} alt='boy with bike' className='pt-32' />
@@ -13,4 +13,4 @@ function Image04() {
   );
 }
 
-export default Image04;
+export default CovidPolicyImg;

@@ -5,7 +5,7 @@ import Email from 'Components/IdentificationInputs/Email';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import Image01 from 'Components/Image01';
+import IdentificationImg from 'Components/IdentificationImg';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
 
@@ -74,7 +74,7 @@ function Identification() {
           </div>
           <NavigationArrors isValid={isValid} top={'pt-4'} next='/Covid' />
         </form>
-        <Image01 />
+        <IdentificationImg />
       </div>
     </Card>
   );
