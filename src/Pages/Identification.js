@@ -1,11 +1,11 @@
-import NavigationArrors from 'Components/NavigationArrors';
+import NavigationArrors from 'Components/Reusables/NavigationArrors';
 import FirstName from 'Components/IdentificationInputs/FirstName';
 import LastName from 'Components/IdentificationInputs/LastName';
 import Email from 'Components/IdentificationInputs/Email';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import IdentificationImg from 'Components/IdentificationImg';
+import IdentificationImg from 'Components/Reusables/IdentificationImg';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
 

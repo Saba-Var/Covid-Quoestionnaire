@@ -1,7 +1,7 @@
 import NotRegistered from 'Components/VaccinatedInputs/Suggestions/NotRegistered';
-import RadioInputContainer from 'Components/RadioInputContainer';
-import ErrorMessage from 'Components/ErrorMessage';
-import RadioButton from 'Components/RadioButton';
+import RadioInputContainer from 'Components/Reusables/RadioInputContainer';
+import ErrorMessage from 'Components/Reusables/ErrorMessage';
+import RadioButton from 'Components/Reusables/RadioButton';
 import FormContext from 'context/form-context';
 import { useContext } from 'react';
 

@@ -1,6 +1,6 @@
-import RadioButtonUnregister from 'Components/RadioButtonUnregister';
-import RadioInputContainer from 'Components/RadioInputContainer';
-import ErrorMessage from 'Components/ErrorMessage';
+import RadioButtonUnregister from 'Components/Reusables/RadioButtonUnregister';
+import RadioInputContainer from 'Components/Reusables/RadioInputContainer';
+import ErrorMessage from 'Components/Reusables/ErrorMessage';
 import FormContext from 'context/form-context';
 import { useContext } from 'react';
 function HadVaccinated(props) {

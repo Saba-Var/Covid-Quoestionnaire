@@ -1,10 +1,10 @@
 import HadVaccinated from 'Components/VaccinatedInputs/HadVaccinated';
-import NavigationArrors from 'Components/NavigationArrors';
+import NavigationArrors from 'Components/Reusables/NavigationArrors';
 import WhichStage from 'Components/VaccinatedInputs/WhichStage';
+import VaccinatedImg from 'Components/Reusables/VaccinatedImg';
 import Waiting from 'Components/VaccinatedInputs/Waiting';
 import FormContext from 'context/form-context';
 import { useForm } from 'react-hook-form';
-import VaccinatedImg from 'Components/VaccinatedImg';
 import Header from 'Layouts/Header';
 import { useContext } from 'react';
 import { useEffect } from 'react';

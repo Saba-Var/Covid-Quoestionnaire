@@ -1,4 +1,4 @@
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from 'Components/Reusables/ErrorMessage';
 function Date(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   const dateState = props.watch().date;

@@ -1,12 +1,12 @@
-import NavigationArrors from 'Components/NavigationArrors';
+import NavigationArrors from 'Components/Reusables/NavigationArrors';
 import Antibodies from 'Components/CovidInputs/Antibodies';
 import HadCovid from 'Components/CovidInputs/HadCovid';
+import CovidImg from 'Components/Reusables/CovidImg';
 import Count from 'Components/CovidInputs/Count';
 import FormContext from 'context/form-context';
 import { useContext, useEffect } from 'react';
 import Date from 'Components/CovidInputs/Date';
 import { useForm } from 'react-hook-form';
-import CovidImg from 'Components/CovidImg';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
 

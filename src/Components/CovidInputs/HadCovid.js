@@ -1,7 +1,7 @@
-import RadioButtonUnregister from 'Components/RadioButtonUnregister';
-import RadioInputContainer from 'Components/RadioInputContainer';
+import RadioButtonUnregister from 'Components/Reusables/RadioButtonUnregister';
+import RadioInputContainer from 'Components/Reusables/RadioInputContainer';
 import FormContext from 'context/form-context';
-import ErrorMessage from 'Components/ErrorMessage';
+import ErrorMessage from 'Components/Reusables/ErrorMessage';
 import { useContext } from 'react';
 
 function HadCovid(props) {

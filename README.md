@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+<div style="display:flex; align-items: center">
+  <img src="src/Assets/images/Redberry-Logo.png" alt="drawing" width="100" style="margin-right: 20px" />
+  <h1 style="position:relative; top: -6px" >Covid Questionaire</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Covid Questionaire collects information about the covid situation and work preferences from users.
 
-In the project directory, you can run:
+#
 
-### `npm start`
+### Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Resources (images)](#resources-images)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- <img src="readme/assets/NodeJs.png" width="40" style="position: relative; top: 8px" /> _Node JS @12.X and up_
+- <img src="readme/assets/Npm.png" width="40" style="position: relative; top: 4px" /> _npm @6 and up_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#
 
-### `npm run build`
+### Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- <img src="readme/assets/React.png" height="25" style="position: relative; top: 4px" /> [React @18.0.0](https://reactjs.org) - front-end framework
+- <img src='readme/assets/ReactHookForm.png'  height="25" style="position: relative; top: 4px" /> [React Hook Form @7.30.0](https://react-hook-form.com/) - flexible and extensible forms with easy-to-use validation.
+- <img src="readme/assets/TailwindLogo.png" height="18" style="position: relative; top: 4px" /> [tailwindcss @3.0.24](https://reactjs.org) - css framework
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Getting Started
 
-### `npm run eject`
+1\. First of all you need to clone repository from github:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+git clone https://github.com/RedberryInternship/covid19-Var-Saba.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2\. Next step requires install all the dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+or
 
-## Learn More
+```sh
+yarn install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3\. after that you can run Covid Questionaire application from terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm start
+```
 
-### Code Splitting
+Runs the app in the development mode. Open http://localhost:3000 to view it in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can learn more in the [Create React App documentation.](https://create-react-app.dev/docs/getting-started/)
+To learn React, check out the [React documentation.](https://reactjs.org/)
 
-### Analyzing the Bundle Size
+#
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Project Structure
 
-### Making a Progressive Web App
+```bash
+├─── readme   # readme assets
+├─── src      # project source codes
+│    ├── Assets      # project images and fonts
+│    ├── Components  # project components
+│    │   ├── CovidInputs           # input components of covid page
+│    │   ├── CovidPolicyInputs     # input components of covid policy page
+│    │   ├── IdentificationInputs  # input components of identification page
+│    │   ├── Reusables             # reusable components
+│    │   ├── svgs                  # svg assets
+│    │   └── VaccinatedInputs      # input components of vaccinated page
+│    │       └── Suggestions       # suggestion components
+│    ├── context      # context api
+│    ├── Layouts      # reusable layout component
+│    ├── Pages        # project pages
+│    ├── UI           # wrapper component
+- .eslintrc.json      # eslint config file
+- .gitignore          # gitignore config file
+- .prettierrc.js      # prettier config file
+- jsconfig.json       # config file for absolute path
+- package.json        # dependency manager configurations
+- tailwind.config.js  # tailwindcss config file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
+### Resources (images)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|                                                                                   |                                                                                    |                                                                       |
+| :-------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: | :-------------------------------------------------------------------: |
+| <img width="1604" alt="Redberry Logo" src="src/Components/svgs/RedberryLogo.svg"> | <img width="1604" alt="Redberry Logo icon" src="src/Components/svgs/MainLogo.svg"> |    <img width="1604" alt="bike" src="src/Assets/images/bike.png">     |
+|    <img width="1604" alt="boy and girl" src="src/Assets/images/boy&girl.png">     |         <img width="1604" alt="doctor" src="src/Assets/images/doctor.png">         | <img width="1604" alt="" src="src/Assets/images/highTemperature.png"> |
