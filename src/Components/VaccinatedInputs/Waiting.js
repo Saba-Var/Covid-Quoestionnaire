@@ -1,5 +1,5 @@
-import SuggestionNo2 from 'Components/VaccinatedInputs/Suggestions/PlanningVaccination';
-import SuggestionNo1 from 'Components/VaccinatedInputs/Suggestions/NotPlanning';
+import PlanningVaccination from 'Components/VaccinatedInputs/Suggestions/PlanningVaccination';
+import NotPlanning from 'Components/VaccinatedInputs/Suggestions/NotPlanning';
 import RadioInputContainer from 'Components/RadioInputContainer';
 import ErrorMessage from 'Components/ErrorMessage';
 import RadioButton from 'Components/RadioButton';
@@ -25,8 +25,8 @@ function Waiting(props) {
         <RadioButton value={option3} inputData={inputData} />
         {props.hookForm.errors.waiting && <ErrorMessage text={errorMessage} />}
       </RadioInputContainer>
-      {props.formState.waiting === option2 && <SuggestionNo1 />}
-      {props.formState.waiting === option3 && <SuggestionNo2 />}
+      {props.formState.waiting === option2 && <NotPlanning />}
+      {props.formState.waiting === option3 && <PlanningVaccination />}
     </>
   );
 }

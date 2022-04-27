@@ -1,4 +1,4 @@
-import SuggestionYes from 'Components/VaccinatedInputs/Suggestions/NotRegistered';
+import NotRegistered from 'Components/VaccinatedInputs/Suggestions/NotRegistered';
 import RadioInputContainer from 'Components/RadioInputContainer';
 import ErrorMessage from 'Components/ErrorMessage';
 import RadioButton from 'Components/RadioButton';
@@ -24,7 +24,7 @@ function WhichStage(props) {
         <RadioButton value={option3} inputData={inputData} />
         {props.hookForm.errors.stage && <ErrorMessage text={errorMessage} />}
       </RadioInputContainer>
-      {props.formState.stage === option3 && <SuggestionYes />}
+      {props.formState.stage === option3 && <NotRegistered />}
     </>
   );
 }
