@@ -103,7 +103,7 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 #### Commit Structure
 
 ```sh
-1 type(scope)!: commit short description
+1 type(scope): commit short description
 2
 3 commit long description
 ```
