@@ -1,13 +1,13 @@
-import NavigationArrors from '../../Components/NavigationArrors';
-import FirstName from '../../Components/01-Inputs/FirstName';
-import LastName from '../../Components/01-Inputs/LastName';
-import Email from '../../Components/01-Inputs/Email';
-import FormContext from '../../context/form-context';
-import Image01 from '../../Components/Image01';
+import NavigationArrors from '../Components/NavigationArrors';
+import FirstName from '../Components/01-Inputs/FirstName';
+import LastName from '../Components/01-Inputs/LastName';
+import Email from '../Components/01-Inputs/Email';
+import FormContext from '../context/form-context';
+import Image01 from '../Components/Image01';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import Header from '../../Layouts/Header';
-import Card from '../../UI/Card';
+import Header from '../Layouts/Header';
+import Card from '../UI/Card';
 
 function Identification() {
   const ctx = useContext(FormContext).state.identification;

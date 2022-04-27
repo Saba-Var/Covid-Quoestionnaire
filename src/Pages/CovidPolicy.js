@@ -1,14 +1,14 @@
-import PhysicalGathering from '../../Components/04-inputs/PhysicalGathering';
-import NavigationArrors from '../../Components/NavigationArrors';
-import Frequency from '../../Components/04-inputs/Frequency';
-import Opinions from '../../Components/04-inputs/Opinions';
-import WorkDays from '../../Components/04-inputs/WorkDays';
-import FormContext from '../../context/form-context';
-import Image04 from '../../Components/Image04';
+import PhysicalGathering from '../Components/04-inputs/PhysicalGathering';
+import NavigationArrors from '../Components/NavigationArrors';
+import Frequency from '../Components/04-inputs/Frequency';
+import Opinions from '../Components/04-inputs/Opinions';
+import WorkDays from '../Components/04-inputs/WorkDays';
+import FormContext from '../context/form-context';
+import Image04 from '../Components/Image04';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import Header from '../../Layouts/Header';
-import Card from '../../UI/Card';
+import Header from '../Layouts/Header';
+import Card from '../UI/Card';
 
 function CovidPolicy() {
   const ctx = useContext(FormContext).state.covidPolicy;

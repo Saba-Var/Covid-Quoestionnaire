@@ -1,8 +1,8 @@
-import RedberryLogo from '../../Assets/images/Redberry-Logo.png';
-import StartButton from '../../Components/StartButton';
-import RedberryLogoModal from '../../Assets/svg/main logo.svg';
+import RedberryLogo from '../Assets/images/Redberry-Logo.png';
+import RedberryLogoModal from '../Assets/svg/main logo.svg';
+import StartButton from '../Components/StartButton';
 import { useState } from 'react';
-import Card from '../../UI/Card';
+import Card from '../UI/Card';
 
 function StartingPage() {
   const [hover, setHover] = useState(false);

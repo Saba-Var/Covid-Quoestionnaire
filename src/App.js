@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Identification from './Pages/Identification/Identification';
-import StartingPage from './Pages/StartingPage/StartingPage';
-import CovidPolicy from './Pages/Covid-Policy/CovidPolicy';
-import Vaccinated from './Pages/Vaccinated/Vaccinated';
 import { FormContextProvider } from './context/form-context';
-import Covid from './Pages/Covid/Covid';
+import Identification from './Pages/Identification';
+import StartingPage from './Pages/StartingPage';
+import CovidPolicy from './Pages/CovidPolicy';
+import Vaccinated from './Pages/Vaccinated';
+import Covid from './Pages/Covid';
 
 function App() {
   return (
