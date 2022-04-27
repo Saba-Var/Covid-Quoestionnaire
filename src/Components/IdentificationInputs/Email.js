@@ -14,9 +14,7 @@ function Email(props) {
           },
         })}
         type='email'
-        className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128 ${
-          props.errors.email && 'bg-red-200'
-        }`}
+        className='border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128'
         placeholder='fbi@redberry.ge'
       />
     </InputWrapper>

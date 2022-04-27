@@ -14,9 +14,7 @@ function LastName(props) {
           },
         })}
         type='text'
-        className={`border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128 ${
-          hookForm.errors.lastName && 'bg-red-200'
-        }`}
+        className='border-2 h-12 px-5 border-black border-x border-y bg-transparent w-128'
         placeholder='ჯუღაშვილი'
       />
     </InputWrapper>
