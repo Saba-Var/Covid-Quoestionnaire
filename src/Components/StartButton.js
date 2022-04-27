@@ -1,5 +1,5 @@
-import startTextHover from 'Assets/svg/startingQuestionaire-hover.svg';
-import startText from 'Assets/svg/startingQuestionnaire.svg';
+import StartingQuestionaireHover from 'Components/svgs/StartingQuestionaireHover.svg';
+import StartingQuestionnaire from 'Components/svgs/StartingQuestionnaire.svg';
 import { Link } from 'react-router-dom';
 
 function StartButton(props) {
@@ -7,14 +7,14 @@ function StartButton(props) {
     <>
       {!props.hover ? (
         <img
-          src={startText}
+          src={StartingQuestionnaire}
           alt='start questionnaire button'
           className='p-4 pt-1 hover:cursor-pointer w-50'
         />
       ) : (
         <Link to='/identification'>
           <img
-            src={startTextHover}
+            src={StartingQuestionaireHover}
             alt='start questionnaire button'
             className='p-4 pt-0 hover:cursor-pointer w-50'
           />

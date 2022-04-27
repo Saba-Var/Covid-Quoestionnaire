@@ -1,5 +1,5 @@
 import DoctorImg from 'Assets/images/doctor.png';
-import star from 'Assets/svg/star.svg';
+import Star from 'Components/svgs/Star.svg';
 
 function VaccinatedImg() {
   return (
@@ -8,8 +8,8 @@ function VaccinatedImg() {
         <img src={DoctorImg} alt='doctor' className='pt-8' />
       </div>
       <img
-        src={star}
-        alt='star'
+        src={Star}
+        alt='Star'
         className='absolute right-[622px] top-40 mix-blend-darken'
       />
     </>

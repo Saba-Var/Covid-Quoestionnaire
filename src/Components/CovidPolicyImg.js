@@ -1,4 +1,4 @@
-import HeartIcon from 'Assets/svg/HeartIcon.svg';
+import HeartIcon from 'Components/svgs/HeartIcon.svg';
 import Bike from 'Assets/images/bike.png';
 function CovidPolicyImg() {
   return (
