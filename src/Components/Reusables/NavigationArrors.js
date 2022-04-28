@@ -1,17 +1,11 @@
-import Arrow from 'Components/svgs/Arrow.svg';
+import Arrow from 'Components/svgs/Arrow';
 import { Link } from 'react-router-dom';
 
 function NavigationArrors(props) {
-  const arrow = (
-    <img
-      src={Arrow}
-      alt='arrow icon'
-      className='w-4 hover:cursor-pointer hover:w-5 z-10'
-    />
-  );
+  const arrow = <Arrow styles='w-4 hover:cursor-pointer hover:w-5 z-10' />;
   return (
     <div
-      className={`absolute ${
+      className={`absolute h-10 flex items-center ${
         props.top
       } translate-x-2/4  right-1/2 top-full hover:cursor-pointer z-10 w-36 h-fit flex ${
         props.back && props.back && 'justify-between'
