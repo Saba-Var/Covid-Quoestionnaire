@@ -1,4 +1,4 @@
-import ErrorMessage from './ErrorMessage';
+import { ErrorMessage } from 'components';
 function InputWrapper(props) {
   return (
     <div className='mb-4 h-32'>

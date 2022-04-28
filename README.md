@@ -16,9 +16,6 @@ Covid Questionaire collects information about the covid situation and work prefe
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-- [Git commit rules](#git-commit-rules)
-    - [Commit Structure](#commit-structure)
-    - [Commit types](#commit-types)
 - [Resources](#resources)
 
 ## Prerequisites
@@ -100,65 +97,9 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 
 #
 
-## Git commit rules
-
-#### Commit Structure
-
-```sh
-1 type(scope): commit short description
-2
-3 commit long description
-```
-
-The first line is the head of the commit which contains a brief description of what was done
-
-```sh
-1 chore: update Redberry logo animation
-```
-
-Commit may also have a body that contains a detailed description. By omitting one line from the head of the commit, the body of the commit is written. For example:
-
-```sh
-3 example: I am the body of this commit, treat me well please...
-```
-
-All commits have a type: feat, fix, refactor, etc.
-
-Absolutely every commit contains a type and a brief description.
-
-```sh
-1 type: short description
-```
-
-There is another way to make the commit more readable and accurate.
-One such way is a scoop. Scoop is written in parentheses after the type before we write a colon and a brief description. Structurally it looks like this.
-
-```sh
-1 type(scope): short description
-```
-
-In Scope you will see "title" which specifies what we are talking about. For example:
-
-```sh
-1 feat(page): build covid page
-```
-
-#
-
-#### Commit types
-
-| type     | description                                                              |
-| -------- | ------------------------------------------------------------------------ |
-| fix      | fix any bug                                                              |
-| feat     | new functionality added                                                  |
-| refactor | the code has been improved without changing the functionality            |
-| chore    | routine, less noticeable changes                                         |
-| wip      | have not completed the specific functionality and it is not finished yet |
-
-#
-
 ## Resources
 
 - [Application Design [Figma]](https://www.figma.com/file/56t2BI25FcD0LAIjR4GVkQ/%E1%83%99%E1%83%98%E1%83%97%E1%83%AE%E1%83%95%E1%83%90%E1%83%A0%E1%83%98?node-id=37%3A3)
 - [Application Design Prototype](https://www.figma.com/proto/56t2BI25FcD0LAIjR4GVkQ/%E1%83%99%E1%83%98%E1%83%97%E1%83%AE%E1%83%95%E1%83%90%E1%83%A0%E1%83%98?node-id=37%3A3&starting-point-node-id=1%3A2&scaling=contain)
+- [Git commit rules](https://redberry.gitbook.io/resources/git-is-semantikuri-komitebi)
 - [Font [BPG Arial]](https://fonts.ge/ka/font/13/BPG-Arial)
