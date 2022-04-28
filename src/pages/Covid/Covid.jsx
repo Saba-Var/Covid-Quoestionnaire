@@ -45,7 +45,7 @@ function Covid(props) {
     <Card>
       <Header page='2' />
       <form
-        className='flex flex-col gap-14 w-168 '
+        className='flex flex-col gap-6 3xl:gap-14 w-168 '
         onSubmit={handleSubmit(onSubmit)}
       >
         <HadCovid errors={errors} register={register} unregister={unregister} />
@@ -65,7 +65,7 @@ function Covid(props) {
           next='/Vaccinated'
           isValid={isValid}
           top={'top-[95%]'}
-          left={'left-[50%]'}
+          left={'left-[50%] translate-x-[-50%]'}
         />
       </form>
       <CovidImg />

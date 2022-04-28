@@ -62,8 +62,8 @@ function CovidPolicy() {
         page='4'
         styles={'top-[0] w-[85%] left-[50%] fixed translate-x-[-50%] bg-gray'}
       />
-      <div className='h-[1940px]  '>
-        <Card>
+      <div>
+        <Card styles={'h-full'}>
           <p className='text-standard leading-7 w-176 mb-11 pt-16'>
             რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
             რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების

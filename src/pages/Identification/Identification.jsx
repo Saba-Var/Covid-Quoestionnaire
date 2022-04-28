@@ -57,7 +57,7 @@ function Identification() {
   return (
     <Card>
       <Header page='1' />
-      <div className='flex justify-between'>
+      <div className='flex justify-between '>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FirstName hookForm={hookForm} />
           <LastName hookForm={hookForm} />
@@ -70,7 +70,7 @@ function Identification() {
           <NavigationArrows
             isValid={isValid}
             top={'top-[88%]'}
-            left={'left-[48%]'}
+            left={'left-[48%] translate-x-[-50%]'}
             next='/Covid'
           />
         </form>

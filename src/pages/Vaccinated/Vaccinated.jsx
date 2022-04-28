@@ -73,7 +73,7 @@ function Vaccinated() {
           next='/Covid-Policy'
           isValid={isValid}
           top={'top-[92%]'}
-          left={'left-[50%]'}
+          left={'left-[50%] translate-x-[-50%]'}
         />
       </form>
       <VaccinatedImg />
