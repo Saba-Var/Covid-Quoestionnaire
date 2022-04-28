@@ -1,5 +1,5 @@
 <div style="display:flex; align-items: center">
-  <img src="src/Assets/images/Redberry-Logo.png" alt="drawing" width="100" style="margin-right: 20px" />
+  <img src="readme/assets/Redberry-Logo.png" alt="logo" width="100" style="margin-right: 20px" />
   <h1 style="position:relative; top: -6px" >Covid Questionaire</h1>
 </div>
 
