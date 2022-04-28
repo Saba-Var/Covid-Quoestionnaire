@@ -57,11 +57,14 @@ function CovidPolicy() {
   };
 
   return (
-    <div className='h-[2050px]'>
-      <div className='h-[1940px]'>
+    <div className=' pt-5'>
+      <Header
+        page='4'
+        styles={'top-[0] w-[85%] left-[50%] fixed translate-x-[-50%] bg-gray'}
+      />
+      <div className='h-[1940px]  '>
         <Card>
-          <Header page='4' />
-          <p className='text-standard leading-7 w-176 mb-11'>
+          <p className='text-standard leading-7 w-176 mb-11 pt-16'>
             რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
             რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების
             განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი —
@@ -70,7 +73,7 @@ function CovidPolicy() {
             პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
           </p>
           <form
-            className='flex flex-col gap-14 w-162 relative'
+            className='flex flex-col gap-14 w-162 relative z-50'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Frequency register={register} errors={errors} />
@@ -86,8 +89,8 @@ function CovidPolicy() {
               </Link>
             </div>
           </form>
+          <CovidPolicyImg />
         </Card>
-        <CovidPolicyImg />
       </div>
     </div>
   );

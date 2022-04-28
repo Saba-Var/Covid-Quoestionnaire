@@ -45,7 +45,7 @@ function Covid(props) {
     <Card>
       <Header page='2' />
       <form
-        className='flex flex-col gap-14 w-168'
+        className='flex flex-col gap-14 w-168 '
         onSubmit={handleSubmit(onSubmit)}
       >
         <HadCovid errors={errors} register={register} unregister={unregister} />
