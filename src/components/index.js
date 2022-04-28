@@ -1,6 +1,6 @@
 export { default as RadioButtonUnregister } from './RadioButtonUnregister';
 export { default as RadioInputContainer } from './RadioInputContainer';
-export { default as NavigationArrors } from './NavigationArrors';
+export { default as NavigationArrows } from './NavigationArrows';
 export { default as InputWrapper } from './InputWrapper';
 export { default as ErrorMessage } from './ErrorMessage';
 export { default as RadioButton } from './RadioButton';

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';
 import { useForm } from 'react-hook-form';
-import { Header, Card, NavigationArrors } from 'components';
+import { Header, Card, NavigationArrows } from 'components';
 import { Email, FirstName, LastName, IdentificationImg } from './components';
 
 function Identification() {
@@ -67,7 +67,7 @@ function Identification() {
               *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
             </p>
           </div>
-          <NavigationArrors
+          <NavigationArrows
             isValid={isValid}
             top={'top-[88%]'}
             left={'left-[48%]'}

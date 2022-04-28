@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Arrow } from 'components/svgs';
-function NavigationArrors(props) {
+function NavigationArrows(props) {
   return (
     <div
       className={`absolute h-10 flex items-center ${props.top} ${
@@ -33,4 +33,4 @@ function NavigationArrors(props) {
   );
 }
 
-export default NavigationArrors;
+export default NavigationArrows;

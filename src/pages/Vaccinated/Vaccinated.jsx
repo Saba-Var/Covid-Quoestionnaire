@@ -1,4 +1,4 @@
-import { NavigationArrors } from 'components';
+import { NavigationArrows } from 'components';
 import FormContext from 'state/form-context';
 import { useForm } from 'react-hook-form';
 import { Card, Header } from 'components';
@@ -68,7 +68,7 @@ function Vaccinated() {
         {formState.HadVaccinated === 'არა' && (
           <Waiting formState={formState} hookForm={hookForm} />
         )}
-        <NavigationArrors
+        <NavigationArrows
           back='/Covid'
           next='/Covid-Policy'
           isValid={isValid}

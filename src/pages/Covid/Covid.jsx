@@ -1,5 +1,5 @@
 import { Antibodies, Count, CovidImg, Date, HadCovid } from './components';
-import { Header, Card, NavigationArrors } from 'components';
+import { Header, Card, NavigationArrows } from 'components';
 import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';
 import { useForm } from 'react-hook-form';
@@ -60,7 +60,7 @@ function Covid(props) {
           <Date register={register} errors={errors} watch={watch} />
         )}
         {ctx.Antibodies === 'კი' && <Count register={register} />}
-        <NavigationArrors
+        <NavigationArrows
           back='/Identification'
           next='/Vaccinated'
           isValid={isValid}
