@@ -72,21 +72,23 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 ## Project Structure
 
 ```bash
-├─── readme   # readme assets
-├─── src      # project source codes
-│    ├── Assets      # project images and fonts
-│    ├── Components  # project components
-│    │   ├── CovidInputs           # input components of covid page
-│    │   ├── CovidPolicyInputs     # input components of covid policy page
-│    │   ├── IdentificationInputs  # input components of identification page
-│    │   ├── Reusables             # reusable components
-│    │   ├── svgs                  # svg assets
-│    │   └── VaccinatedInputs      # input components of vaccinated page
-│    │       └── Suggestions       # suggestion components
-│    ├── context      # context api
-│    ├── Layouts      # reusable layout component
-│    ├── Pages        # project pages
-│    ├── UI           # wrapper component
+├─── readme  # readme assets
+├─── src     # project source codes
+│    ├── assets      # project images and fonts 
+│    ├── components  # reusable components
+│    │   └── svgs            # svg components
+│    ├── pages       # project pages
+│    │   ├── Covid
+│    │   │   └── components # page components
+│    │   ├── CovidPolicy    # project page
+│    │   │   └── components # page components
+│    │   ├── Identification # project page
+│    │   │   └── components # page components
+│    │   ├── StartingPage   # project page
+│    │   └── Vaccinated     # project page
+│    │       └── components # page components
+│    │           └── suggestions # suggestions of radio inputs
+│    └── state        # context api
 - .eslintrc.json      # eslint config file
 - .gitignore          # gitignore config file
 - .prettierrc.js      # prettier config file
