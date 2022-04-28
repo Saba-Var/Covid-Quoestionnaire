@@ -9,6 +9,8 @@ import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Header from 'Layouts/Header';
 import Card from 'UI/Card';
+import { Link } from 'react-router-dom';
+import Arrow from 'Components/svgs/Arrow';
 
 function CovidPolicy() {
   const ctx = useContext(FormContext).state.covidPolicy;
@@ -55,8 +57,8 @@ function CovidPolicy() {
   };
 
   return (
-    <div className='bg-gray'>
-      <div className='bg-gray h-492'>
+    <div className='h-[2050px]'>
+      <div className='h-[1940px]'>
         <Card>
           <Header page='4' />
           <p className='text-standard leading-7 w-176 mb-11'>
@@ -68,7 +70,7 @@ function CovidPolicy() {
             პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
           </p>
           <form
-            className='flex flex-col gap-14 w-162'
+            className='flex flex-col gap-14 w-162 relative'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Frequency register={register} errors={errors} />
@@ -78,14 +80,15 @@ function CovidPolicy() {
             <button className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'>
               დასრულება
             </button>
+            <div className='flex justify-center absolute top-[103%] right-[-5%] pb-10'>
+              <Link to='/Vaccinated'>
+                <Arrow styles='rotate-180 w-4 hover:cursor-pointer' />
+              </Link>
+            </div>
           </form>
         </Card>
         <CovidPolicyImg />
       </div>
-      <div className='h-8 mt-8 pt-8 pb-6'>
-        <NavigationArrors back='/Vaccinated' top={'pt-248'} />
-      </div>
-      <div className='h-2'></div>
     </div>
   );
 }

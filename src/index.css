@@ -11,6 +11,9 @@
 }
 
 @layer components {
+  body {
+    @apply bg-gray;
+  }
   input[type='radio'] {
     @apply accent-charcoal;
   }

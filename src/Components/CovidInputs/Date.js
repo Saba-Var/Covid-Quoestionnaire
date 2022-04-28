@@ -17,7 +17,7 @@ function Date(props) {
         className='pl-4 bg-transparent border-[1px] border-charcoal h-12 w-128 px-5 mb-2'
       />
       {!dateState && (
-        <p className='bg-gray w-36 p-2 text-charcoal absolute bottom-64 left-52'>
+        <p className='bg-gray w-36 p-2 text-charcoal absolute bottom-80 left-52'>
           დდ/თთ/წწ
         </p>
       )}

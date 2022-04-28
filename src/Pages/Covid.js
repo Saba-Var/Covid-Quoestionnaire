@@ -70,7 +70,8 @@ function Covid(props) {
           back='/Identification'
           next='/Vaccinated'
           isValid={isValid}
-          top={'pt-12'}
+          top={'top-[95%]'}
+          left={'left-[50%]'}
         />
       </form>
       <CovidImg />

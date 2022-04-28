@@ -72,7 +72,12 @@ function Identification() {
               *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
             </p>
           </div>
-          <NavigationArrors isValid={isValid} top={'pt-4'} next='/Covid' />
+          <NavigationArrors
+            isValid={isValid}
+            top={'top-[88%]'}
+            left={'left-[48%]'}
+            next='/Covid'
+          />
         </form>
         <IdentificationImg />
       </div>
