@@ -1,4 +1,4 @@
-import RedberryLogoModal from 'Components/svgs/MainLogo.svg';
+import MainLogo from 'Components/svgs/MainLogo';
 import RedberryLogo from 'Assets/images/Redberry-Logo.png';
 import StartButton from 'Components/Reusables/StartButton';
 import { useState } from 'react';
@@ -12,11 +12,7 @@ function StartingPage() {
   return (
     <Card>
       <div className='flex items-center flex-col mt-63.7 hover:cursor-pointer '>
-        <img
-          src={RedberryLogoModal}
-          alt='Redberry logo'
-          className='w-0 h-0 animate-shrink-center absolute z-10'
-        />
+        <MainLogo styles={'w-0 h-0 animate-shrink-center absolute z-10'} />
         <img
           src={RedberryLogo}
           alt='Redberry logo'
