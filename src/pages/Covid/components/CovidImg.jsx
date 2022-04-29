@@ -5,7 +5,7 @@ function CovidImg() {
       <img
         src={highTemperature}
         alt='sick boy'
-        className='absolute top-[14%] w-[45%] right-[10%]'
+        className='absolute top-[14%] w-[42%] right-[10%]'
       />
     </div>
   );
