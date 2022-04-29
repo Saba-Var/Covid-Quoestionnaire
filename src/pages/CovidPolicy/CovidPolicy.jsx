@@ -10,7 +10,7 @@ import {
   Opinions,
   PhysicalGathering,
   WorkDays,
-} from './components';
+} from 'pages/CovidPolicy/components';
 
 function CovidPolicy() {
   const ctx = useContext(FormContext).state.covidPolicy;

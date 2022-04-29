@@ -1,4 +1,10 @@
-import { Antibodies, Count, CovidImg, Date, HadCovid } from './components';
+import {
+  Antibodies,
+  Count,
+  CovidImg,
+  Date,
+  HadCovid,
+} from 'pages/Covid/components';
 import { Header, Card, NavigationArrows } from 'components';
 import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';

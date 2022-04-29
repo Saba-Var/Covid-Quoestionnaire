@@ -1,5 +1,5 @@
 import { RadioInputContainer, ErrorMessage, RadioButton } from 'components';
-import { NotRegistered } from './suggestions';
+import { NotRegistered } from 'pages/Vaccinated/components/suggestions';
 import FormContext from 'state/form-context';
 import { useContext } from 'react';
 

@@ -9,7 +9,7 @@ import {
   WhichStage,
   VaccinatedImg,
   Waiting,
-} from './components';
+} from 'pages/Vaccinated/components';
 function Vaccinated() {
   const ctx = useContext(FormContext);
   const {

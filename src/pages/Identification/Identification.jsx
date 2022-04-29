@@ -2,7 +2,12 @@ import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';
 import { useForm } from 'react-hook-form';
 import { Header, Card, NavigationArrows } from 'components';
-import { Email, FirstName, LastName, IdentificationImg } from './components';
+import {
+  Email,
+  FirstName,
+  LastName,
+  IdentificationImg,
+} from 'pages/Identification/components';
 
 function Identification() {
   const ctx = useContext(FormContext).state.identification;

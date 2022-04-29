@@ -1,7 +1,10 @@
 import { ErrorMessage, RadioButton, RadioInputContainer } from 'components';
-import { NotPlanning, PlanningVaccination } from './suggestions';
 import FormContext from 'state/form-context';
 import { useContext } from 'react';
+import {
+  NotPlanning,
+  PlanningVaccination,
+} from 'pages/Vaccinated/components/suggestions';
 function Waiting(props) {
   const ctx = useContext(FormContext);
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
