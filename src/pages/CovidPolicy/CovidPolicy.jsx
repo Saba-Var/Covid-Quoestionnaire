@@ -57,39 +57,45 @@ function CovidPolicy() {
   };
 
   return (
-    <div className=' pt-5'>
-      <Header
-        page='4'
-        styles={'top-[0] w-[85%] left-[50%] fixed translate-x-[-50%] bg-gray'}
-      />
+    <div className='pt-5'>
       <div>
-        <Card styles={'h-full  pb-26 '}>
-          <p className='text-standard leading-7 w-176 mb-11 pt-16'>
-            რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
-            რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების
-            განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი —
-            ჩვენთან გადმოსვლის.
-            <br /> <br /> პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ
-            პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
-          </p>
-          <form
-            className='flex flex-col gap-14 w-162 relative z-50'
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Frequency register={register} errors={errors} />
-            <WorkDays register={register} errors={errors} />
-            <PhysicalGathering register={register} />
-            <Opinions register={register} />
-            <button className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'>
-              დასრულება
-            </button>
-            <div className='flex justify-center absolute top-[103%] right-[-5%] pb-10'>
-              <Link to='/Vaccinated'>
-                <Arrow styles='rotate-180 w-4 hover:cursor-pointer' />
-              </Link>
+        <Header
+          page='4'
+          styles={
+            'top-[0] w-[85%] left-[50%] fixed translate-x-[-50%] bg-gray '
+          }
+        />
+        <Card styles={'h-full  pb-26'}>
+          <div className='flex justify-between'>
+            <div>
+              <p className='text-standard leading-7 w-176 mb-11 pt-16'>
+                რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია.
+                გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და
+                ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი,
+                ბევრისთვის კი — ჩვენთან გადმოსვლის.
+                <br /> <br /> პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ
+                პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.
+              </p>
+              <form
+                className='flex flex-col gap-14 w-162 relative z-50'
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <Frequency register={register} errors={errors} />
+                <WorkDays register={register} errors={errors} />
+                <PhysicalGathering register={register} />
+                <Opinions register={register} />
+                <button className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'>
+                  დასრულება
+                </button>
+                <div className='flex justify-center absolute top-[103%] right-[-5%] pb-10'>
+                  <Link to='/Vaccinated'>
+                    <Arrow styles='rotate-180 w-4 hover:cursor-pointer' />
+                  </Link>
+                </div>
+              </form>
             </div>
-          </form>
-          <CovidPolicyImg />
+            <CovidPolicyImg />
+          </div>
         </Card>
       </div>
     </div>
