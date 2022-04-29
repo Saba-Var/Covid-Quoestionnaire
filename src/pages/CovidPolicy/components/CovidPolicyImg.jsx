@@ -5,7 +5,7 @@ function CovidPolicyImg() {
       <img
         src={bike}
         alt='boy with bike'
-        className='w-[40%] fixed right-[6%] top-[17%]'
+        className='w-[35%] fixed right-[6%] top-[17%]'
       />
     </div>
   );

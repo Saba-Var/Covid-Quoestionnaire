@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';
-import { Header, Card } from 'components';
+import { Card, Header } from 'components';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { Arrow } from 'components/svgs';
@@ -59,14 +59,12 @@ function CovidPolicy() {
   return (
     <div className='pt-5'>
       <div>
-        <Header
-          page='4'
-          styles={
-            'top-[0] w-[85%] left-[50%] fixed translate-x-[-50%] bg-gray '
-          }
-        />
         <Card styles={'h-full  pb-26'}>
-          <div className='flex justify-between'>
+          <div className='bg-gray h-24 w-full fixed top-0 left-0 z-[9999] px-28 2xl:px-50  2xl:pt-12'>
+            <Header page='4' styles={' bg-gray  '} />
+          </div>
+
+          <div className='flex justify-between '>
             <div>
               <p className='text-standard leading-7 w-176 mb-11 pt-16'>
                 რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია.
