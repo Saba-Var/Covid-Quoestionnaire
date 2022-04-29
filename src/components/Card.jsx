@@ -1,7 +1,7 @@
 function Card(props) {
   return (
     <div
-      className={`w-full pb-26 pl-50 pr-41.2 pt-12 h-screen overflow-hidden ${props.styles}`}
+      className={`w-full px-28 2xl:px-50  2xl:pt-12 h-screen overflow-hidden ${props.styles}`}
     >
       {props.children}
     </div>

@@ -57,26 +57,28 @@ function Vaccinated() {
   return (
     <Card>
       <Header page='3' />
-      <form
-        className='flex flex-col gap-14 w-168'
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <HadVaccinated hookForm={hookForm} unregister={unregister} />
-        {formState.HadVaccinated === 'კი' && (
-          <WhichStage formState={formState} hookForm={hookForm} />
-        )}
-        {formState.HadVaccinated === 'არა' && (
-          <Waiting formState={formState} hookForm={hookForm} />
-        )}
-        <NavigationArrows
-          back='/Covid'
-          next='/Covid-Policy'
-          isValid={isValid}
-          top={'top-[92%]'}
-          left={'left-[50%] translate-x-[-50%]'}
-        />
-      </form>
-      <VaccinatedImg />
+      <div className='flex justify-between'>
+        <form
+          className='flex flex-col gap-14 w-168'
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <HadVaccinated hookForm={hookForm} unregister={unregister} />
+          {formState.HadVaccinated === 'კი' && (
+            <WhichStage formState={formState} hookForm={hookForm} />
+          )}
+          {formState.HadVaccinated === 'არა' && (
+            <Waiting formState={formState} hookForm={hookForm} />
+          )}
+          <NavigationArrows
+            back='/Covid'
+            next='/Covid-Policy'
+            isValid={isValid}
+            top={'top-[92%]'}
+            left={'left-[50%] translate-x-[-50%]'}
+          />
+        </form>
+        <VaccinatedImg />
+      </div>
     </Card>
   );
 }

@@ -57,23 +57,25 @@ function Identification() {
   return (
     <Card>
       <Header page='1' />
-      <div className='flex justify-between '>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <FirstName hookForm={hookForm} />
-          <LastName hookForm={hookForm} />
-          <Email errors={errors} register={register} />
-          <div className='border-t-[1px] w-fit pt-4 mt-12'>
-            <p className='text-slate-500'>
-              *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
-            </p>
-          </div>
-          <NavigationArrows
-            isValid={isValid}
-            top={'top-[88%]'}
-            left={'left-[48%] translate-x-[-50%]'}
-            next='/Covid'
-          />
-        </form>
+      <div className='flex justify-between'>
+        <div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <FirstName hookForm={hookForm} />
+            <LastName hookForm={hookForm} />
+            <Email errors={errors} register={register} />
+            <div className='border-t-[1px] w-fit pt-4 mt-12'>
+              <p className='text-slate-500'>
+                *-ით მონიშნული ველების შევსება <br /> სავალდებულოა
+              </p>
+            </div>
+            <NavigationArrows
+              isValid={isValid}
+              top={'top-[88%]'}
+              left={'left-[48%] translate-x-[-50%]'}
+              next='/Covid'
+            />
+          </form>
+        </div>
         <IdentificationImg />
       </div>
     </Card>

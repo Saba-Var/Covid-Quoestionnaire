@@ -1,11 +1,11 @@
 import { highTemperature } from 'assets/images';
 function CovidImg() {
   return (
-    <div className='absolute right-0 3xl:right-36 top-28 '>
+    <div className='pb-20'>
       <img
         src={highTemperature}
         alt='sick boy'
-        className='pt-8 xl:w-[72%] 3xl:w-[100%]'
+        className='absolute top-[14%] w-[45%] right-[10%]'
       />
     </div>
   );

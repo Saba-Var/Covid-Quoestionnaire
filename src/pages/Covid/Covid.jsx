@@ -44,31 +44,37 @@ function Covid(props) {
   return (
     <Card>
       <Header page='2' />
-      <form
-        className='flex flex-col gap-6 3xl:gap-14 w-168 '
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <HadCovid errors={errors} register={register} unregister={unregister} />
-        {ctx.HadCovid === 'კი ' && (
-          <Antibodies
+      <div className='flex justify-between'>
+        <form
+          className='flex flex-col gap-6 3xl:gap-14 w-168 '
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <HadCovid
             errors={errors}
             register={register}
             unregister={unregister}
           />
-        )}
-        {ctx.Antibodies === 'არა' && (
-          <Date register={register} errors={errors} watch={watch} />
-        )}
-        {ctx.Antibodies === 'კი' && <Count register={register} />}
-        <NavigationArrows
-          back='/Identification'
-          next='/Vaccinated'
-          isValid={isValid}
-          top={'top-[95%]'}
-          left={'left-[50%] translate-x-[-50%]'}
-        />
-      </form>
-      <CovidImg />
+          {ctx.HadCovid === 'კი ' && (
+            <Antibodies
+              errors={errors}
+              register={register}
+              unregister={unregister}
+            />
+          )}
+          {ctx.Antibodies === 'არა' && (
+            <Date register={register} errors={errors} watch={watch} />
+          )}
+          {ctx.Antibodies === 'კი' && <Count register={register} />}
+          <NavigationArrows
+            back='/Identification'
+            next='/Vaccinated'
+            isValid={isValid}
+            top={'top-[95%]'}
+            left={'left-[50%] translate-x-[-50%]'}
+          />
+        </form>
+        <CovidImg />
+      </div>
     </Card>
   );
 }

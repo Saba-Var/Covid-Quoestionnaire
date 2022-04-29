@@ -2,11 +2,11 @@ import { boyAndGirl } from 'assets/images';
 
 function IdentificationImg() {
   return (
-    <div className='absolute right-0 3xl:right-36 top-28 '>
+    <div className='pb-20'>
       <img
         src={boyAndGirl}
         alt='boy and girl'
-        className='xl:w-[72%] 3xl:w-[100%]'
+        className='absolute top-[10%] w-[45%] right-[10%]'
       />
     </div>
   );
