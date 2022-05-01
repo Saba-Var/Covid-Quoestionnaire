@@ -70,7 +70,9 @@ function Covid(props) {
           {ctx.had_antibody_test === 'false' && (
             <Date register={register} errors={errors} watch={watch} />
           )}
-          {ctx.had_antibody_test === 'true' && <Count register={register} />}
+          {ctx.had_antibody_test === 'true' && (
+            <Count register={register} watch={watch} />
+          )}
           <NavigationArrows
             back='/Identification'
             next='/Vaccinated'
