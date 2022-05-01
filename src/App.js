@@ -6,6 +6,7 @@ import {
   CovidPolicy,
   StartingPage,
   Identification,
+  Thanks,
 } from 'pages';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/Covid' element={<Covid />} />
           <Route path='/Vaccinated' element={<Vaccinated />} />
           <Route path='/Covid-Policy' element={<CovidPolicy />} />
+          <Route path='/Thanks' element={<Thanks />} />
         </Routes>
       </Router>
     </FormContextProvider>

@@ -1,4 +1,4 @@
-function submit(ctx, dispatch) {
+function submit(ctx, dispatch, navigate) {
   let formData = JSON.parse(JSON.stringify(ctx));
   const test = formData.had_antibody_test;
   const antibodies = formData.antibodies;
@@ -41,6 +41,7 @@ function submit(ctx, dispatch) {
       });
       if (response.ok === true) {
         dispatch({ type: 'reset' });
+        navigate('/Thanks', { replace: true });
       } else throw new Error('fetch failed');
     }
     postData();

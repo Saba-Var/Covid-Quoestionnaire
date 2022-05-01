@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
 import FormContext from 'state/form-context';
 import { Card, Header } from 'components';
@@ -14,6 +15,7 @@ import {
 } from 'pages/CovidPolicy/components';
 
 function CovidPolicy() {
+  let navigate = useNavigate();
   const ctx = useContext(FormContext).state;
   const dispatch = useContext(FormContext).dispatch;
 
@@ -58,7 +60,7 @@ function CovidPolicy() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    submit(ctx, dispatch);
+    submit(ctx, dispatch, navigate);
   };
   return (
     <div className='pt-5'>
