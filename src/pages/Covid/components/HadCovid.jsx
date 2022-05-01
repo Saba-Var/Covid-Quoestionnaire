@@ -8,10 +8,10 @@ import {
 function HadCovid(props) {
   const ctx = useContext(FormContext);
   const hookForm = {
-    checked: ctx.state.HadCovid,
+    checked: ctx.state.had_covid,
     unregister: props.unregister,
     register: props.register,
-    component: 'HadCovid',
+    component: 'had_covid',
   };
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
@@ -23,7 +23,7 @@ function HadCovid(props) {
         hookForm={hookForm}
         ctxValue={'have_right_now'}
       />
-      {props.errors.HadCovid && <ErrorMessage text={errorMessage} />}
+      {props.errors.had_covid && <ErrorMessage text={errorMessage} />}
     </RadioInputContainer>
   );
 }

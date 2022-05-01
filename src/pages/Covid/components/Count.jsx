@@ -1,5 +1,7 @@
+import { ErrorMessage } from 'components';
 function Count(props) {
   const dateState = props.watch('antibodies.test_date');
+  const errorMessage = 'ამ ველის შევსება სავალდებულოა';
 
   return (
     <div>
@@ -10,7 +12,7 @@ function Count(props) {
       <div className='flex flex-col gap-6 '>
         <div className='relative'>
           <input
-            {...props.register('antibodies.test_date')}
+            {...props.register('antibodies.test_date', { required: true })}
             type='date'
             placeholder='დდ/თთ/წწ'
             max='2022-05-01'
@@ -23,15 +25,15 @@ function Count(props) {
             </p>
           )}
         </div>
-
         <input
-          {...props.register('antibodies.number')}
+          {...props.register('antibodies.number', { required: true })}
           type='number'
           placeholder='ანტისხეულების რაოდენობა'
           min={0}
           className='pl-4 bg-transparent border-[1px] border-charcoal h-12 w-128 px-5'
         />
       </div>
+      {props.errors.antibodies && <ErrorMessage text={errorMessage} />}
     </div>
   );
 }

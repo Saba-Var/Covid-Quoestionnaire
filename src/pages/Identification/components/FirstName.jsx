@@ -6,7 +6,7 @@ function FirstName(props) {
       <label className='font-bold text-tiny'>სახელი*</label>
       <input
         {...hookForm.register('first_name', {
-          required: `სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან`,
+          required: `სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`,
           validate: {
             minLength: (v) => hookForm.minLength(v, 'სახელის'),
             onlyLetters: (v) => hookForm.onlyLetters(v, 'სახელის'),

@@ -23,14 +23,14 @@ function Covid(props) {
   } = useForm({
     mode: 'onChange',
     defaultValues: {
-      HadCovid: '',
+      had_covid: '',
       antibodies: { test_date: '', number: '' },
       had_antibody_test: '',
       covid_sickness_date: '',
     },
   });
   useEffect(() => {
-    setValue('HadCovid', ctx.HadCovid);
+    setValue('HadCovid', ctx.had_covid);
     setValue('had_antibody_test', ctx.had_antibody_test);
     setValue('antibodies', ctx.antibodies);
     setValue('covid_sickness_date', ctx.covid_sickness_date);
@@ -60,7 +60,7 @@ function Covid(props) {
             register={register}
             unregister={unregister}
           />
-          {ctx.HadCovid === 'yes' && (
+          {ctx.had_covid === 'yes' && (
             <Antibodies
               errors={errors}
               register={register}
@@ -71,7 +71,7 @@ function Covid(props) {
             <Date register={register} errors={errors} watch={watch} />
           )}
           {ctx.had_antibody_test === 'true' && (
-            <Count register={register} watch={watch} />
+            <Count register={register} watch={watch} errors={errors} />
           )}
           <NavigationArrows
             back='/Identification'

@@ -1,6 +1,7 @@
 function RadioButton(props) {
   const inputData = props.inputData;
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
+
   return (
     <label className='flex items-center gap-5 text-xl font-medium text-charcoal z-[99999] '>
       <input

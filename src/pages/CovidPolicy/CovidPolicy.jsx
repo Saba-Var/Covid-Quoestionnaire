@@ -4,6 +4,7 @@ import { Card, Header } from 'components';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { Arrow } from 'components/svgs';
+import submit from 'helper/submit';
 import {
   CovidPolicyImg,
   Frequency,
@@ -15,7 +16,6 @@ import {
 function CovidPolicy() {
   const ctx = useContext(FormContext).state;
   const dispatch = useContext(FormContext).dispatch;
-  console.log(ctx);
 
   const {
     setValue,
@@ -58,6 +58,7 @@ function CovidPolicy() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
+    submit(ctx, dispatch);
   };
   return (
     <div className='pt-5'>

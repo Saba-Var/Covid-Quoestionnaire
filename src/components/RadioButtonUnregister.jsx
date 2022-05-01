@@ -2,12 +2,13 @@ function RadioButtonUnregister(props) {
   const hookForm = props.hookForm;
   const unregister = (value) => {
     if (hookForm.component === 'had_antibody_test') {
-      if (value === 'კი') hookForm.unregister('covid_sickness_date');
-      else {
-        hookForm.unregister('antibodies.test_date');
-        hookForm.unregister('antibodies.number');
+      if (value === 'კი') {
+        hookForm.unregister('covid_sickness_date');
+      } else {
+        hookForm.unregister('antibodies');
       }
-    } else if (hookForm.component === 'HadCovid') {
+    }
+    if (hookForm.component === 'had_covid') {
       if (value !== 'კი') {
         hookForm.unregister('had_antibody_test');
         hookForm.unregister('covid_sickness_date');

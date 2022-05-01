@@ -46,8 +46,8 @@ function Identification() {
   };
 
   const minLength = (value, target) =>
-    value.trim().length >= 2 ||
-    `${target} ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან`;
+    value.trim().length >= 3 ||
+    `${target} ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`;
 
   const onlyLetters = (value, target) =>
     !/\d/.test(value) || `${target} ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`;

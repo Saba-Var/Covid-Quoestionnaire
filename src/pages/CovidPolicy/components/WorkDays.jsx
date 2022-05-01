@@ -8,6 +8,7 @@ function WorkDays(props) {
     register: props.register,
     target: 'number_of_days_from_office',
   };
+
   return (
     <RadioInputContainer question='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'>
       <RadioButton value={0} inputData={inputData} ctxValue={0} />
