@@ -34,7 +34,7 @@ const initialState = {
     had_antibody_test: '',
     covid_sickness_date: '',
   },
-  vaccinated: { HadVaccinated: '', stage: '', waiting: '' },
+  vaccinated: { had_vaccine: '', vaccination_stage: '', i_am_waiting: '' },
   covidPolicy: {
     frequency: '',
     workDays: '',

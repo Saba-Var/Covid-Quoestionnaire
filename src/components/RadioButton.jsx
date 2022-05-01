@@ -5,10 +5,10 @@ function RadioButton(props) {
     <label className='flex items-center gap-5 text-xl font-medium text-charcoal z-[99999] '>
       <input
         {...inputData.register(inputData.target, { required: errorMessage })}
-        value={props.value}
+        value={props.ctxValue}
         type='radio'
         className='w-6 h-6 z-[99999]'
-        defaultChecked={props.value === inputData.checked}
+        defaultChecked={props.ctxValue === inputData.checked}
       />
       <span>{props.value}</span>
     </label>

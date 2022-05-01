@@ -22,20 +22,20 @@ function Vaccinated() {
   } = useForm({
     mode: 'onChange',
     defaultValues: {
-      HadVaccinated: '',
-      stage: '',
-      waiting: '',
+      had_vaccine: '',
+      vaccination_stage: '',
+      i_am_waiting: '',
     },
   });
 
   useEffect(() => {
-    setValue('HadVaccinated', ctx.state.vaccinated.HadVaccinated);
-    setValue('stage', ctx.state.vaccinated.stage);
-    setValue('waiting', ctx.state.vaccinated.waiting);
+    setValue('had_vaccine', ctx.state.vaccinated.had_vaccine);
+    setValue('vaccination_stage', ctx.state.vaccinated.vaccination_stage);
+    setValue('i_am_waiting', ctx.state.vaccinated.i_am_waiting);
   }, [
-    ctx.state.vaccinated.HadVaccinated,
-    ctx.state.vaccinated.stage,
-    ctx.state.vaccinated.waiting,
+    ctx.state.vaccinated.had_vaccine,
+    ctx.state.vaccinated.vaccination_stage,
+    ctx.state.vaccinated.i_am_waiting,
     setValue,
   ]);
 
@@ -54,6 +54,7 @@ function Vaccinated() {
     register,
     errors,
   };
+
   return (
     <Card>
       <Header page='3' />
@@ -63,10 +64,10 @@ function Vaccinated() {
           onSubmit={handleSubmit(onSubmit)}
         >
           <HadVaccinated hookForm={hookForm} unregister={unregister} />
-          {formState.HadVaccinated === 'კი' && (
+          {formState.had_vaccine === 'yes' && (
             <WhichStage formState={formState} hookForm={hookForm} />
           )}
-          {formState.HadVaccinated === 'არა' && (
+          {formState.had_vaccine === 'no' && (
             <Waiting formState={formState} hookForm={hookForm} />
           )}
           <NavigationArrows

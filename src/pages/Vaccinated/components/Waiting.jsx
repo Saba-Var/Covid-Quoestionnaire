@@ -8,24 +8,36 @@ import {
 function Waiting(props) {
   const ctx = useContext(FormContext);
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
-  const option1 = 'დარეგისტრირებული ვარ და ველოდები რიცხვს';
-  const option2 = 'არ ვგეგმავ';
-  const option3 = 'გადატანილი მაქვს და ვგეგმავ აცრას';
   const inputData = {
-    target: 'waiting',
+    target: 'i_am_waiting',
     register: props.hookForm.register,
-    checked: ctx.state.vaccinated.waiting,
+    checked: ctx.state.vaccinated.i_am_waiting,
   };
   return (
     <>
       <RadioInputContainer question='რას ელოდები?*'>
-        <RadioButton value={option1} inputData={inputData} />
-        <RadioButton value={option2} inputData={inputData} />
-        <RadioButton value={option3} inputData={inputData} />
-        {props.hookForm.errors.waiting && <ErrorMessage text={errorMessage} />}
+        <RadioButton
+          value={'დარეგისტრირებული ვარ და ველოდები რიცხვს'}
+          inputData={inputData}
+          ctxValue={'registered_and_waiting'}
+        />
+        <RadioButton
+          value={'არ ვგეგმავ'}
+          inputData={inputData}
+          ctxValue={'not_planning'}
+        />
+        <RadioButton
+          value={'გადატანილი მაქვს და ვგეგმავ აცრას'}
+          inputData={inputData}
+          ctxValue={'had_covid_and_planning_to_be_vaccinated'}
+        />
+        {props.hookForm.errors.i_am_waiting && (
+          <ErrorMessage text={errorMessage} />
+        )}
       </RadioInputContainer>
-      {props.formState.waiting === option2 && <NotPlanning />}
-      {props.formState.waiting === option3 && <PlanningVaccination />}
+      {props.formState.i_am_waiting === 'not_planning' && <NotPlanning />}
+      {props.formState.i_am_waiting ===
+        'had_covid_and_planning_to_be_vaccinated' && <PlanningVaccination />}
     </>
   );
 }

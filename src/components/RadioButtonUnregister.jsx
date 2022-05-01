@@ -14,8 +14,8 @@ function RadioButtonUnregister(props) {
         hookForm.unregister('antibodies');
       }
     } else {
-      if (value === 'კი') hookForm.unregister('waiting');
-      else hookForm.unregister('stage');
+      if (value === 'კი') hookForm.unregister('i_am_waiting');
+      else hookForm.unregister('vaccination_stage');
     }
   };
 

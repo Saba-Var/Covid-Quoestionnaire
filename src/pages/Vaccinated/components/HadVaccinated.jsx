@@ -11,14 +11,14 @@ function HadVaccinated(props) {
   const hookForm = {
     checked: ctx.state.covid.HadCovid,
     unregister: props.unregister,
-    component: 'HadVaccinated',
+    component: 'had_vaccine',
     register: props.hookForm.register,
   };
   return (
     <RadioInputContainer question='უკვე აცრილი ხარ?*'>
-      <RadioButtonUnregister value='კი' hookForm={hookForm} />
-      <RadioButtonUnregister value='არა' hookForm={hookForm} />
-      {props.hookForm.errors.HadVaccinated && (
+      <RadioButtonUnregister value='კი' hookForm={hookForm} ctxValue={'yes'} />
+      <RadioButtonUnregister value='არა' hookForm={hookForm} ctxValue={'no'} />
+      {props.hookForm.errors.had_vaccine && (
         <ErrorMessage text={errorMessage} />
       )}
     </RadioInputContainer>
