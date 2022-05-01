@@ -4,7 +4,7 @@ import { useContext } from 'react';
 function Frequency(props) {
   const ctx = useContext(FormContext);
   const inputData = {
-    checked: ctx.state.vaccinated.non_formal_meetings,
+    checked: ctx.state.non_formal_meetings,
     register: props.register,
     target: 'non_formal_meetings',
   };

@@ -8,7 +8,7 @@ import {
 function HadCovid(props) {
   const ctx = useContext(FormContext);
   const hookForm = {
-    checked: ctx.state.covid.HadCovid,
+    checked: ctx.state.HadCovid,
     unregister: props.unregister,
     register: props.register,
     component: 'HadCovid',

@@ -10,7 +10,7 @@ import {
 } from 'pages/Identification/components';
 
 function Identification() {
-  const ctx = useContext(FormContext).state.identification;
+  const ctx = useContext(FormContext).state;
   const dispatch = useContext(FormContext).dispatch;
 
   useEffect(() => {

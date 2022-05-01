@@ -7,7 +7,7 @@ function WhichStage(props) {
   const ctx = useContext(FormContext);
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   const inputData = {
-    checked: ctx.state.vaccinated.vaccination_stage,
+    checked: ctx.state.vaccination_stage,
     register: props.hookForm.register,
     target: 'vaccination_stage',
   };

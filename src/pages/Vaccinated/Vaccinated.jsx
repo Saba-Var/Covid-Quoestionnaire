@@ -11,7 +11,8 @@ import {
   Waiting,
 } from 'pages/Vaccinated/components';
 function Vaccinated() {
-  const ctx = useContext(FormContext);
+  const ctx = useContext(FormContext).state;
+  const dispatch = useContext(FormContext).dispatch;
   const {
     setValue,
     register,
@@ -29,22 +30,17 @@ function Vaccinated() {
   });
 
   useEffect(() => {
-    setValue('had_vaccine', ctx.state.vaccinated.had_vaccine);
-    setValue('vaccination_stage', ctx.state.vaccinated.vaccination_stage);
-    setValue('i_am_waiting', ctx.state.vaccinated.i_am_waiting);
-  }, [
-    ctx.state.vaccinated.had_vaccine,
-    ctx.state.vaccinated.vaccination_stage,
-    ctx.state.vaccinated.i_am_waiting,
-    setValue,
-  ]);
+    setValue('had_vaccine', ctx.had_vaccine);
+    setValue('vaccination_stage', ctx.vaccination_stage);
+    setValue('i_am_waiting', ctx.i_am_waiting);
+  }, [ctx.had_vaccine, ctx.vaccination_stage, ctx.i_am_waiting, setValue]);
 
   useEffect(() => {
     const subscription = watch((data) => {
-      ctx.dispatch({ type: 'vaccinated', newState: data });
+      dispatch({ type: 'vaccinated', newState: data });
     });
     return () => subscription.unsubscribe();
-  }, [ctx, watch]);
+  }, [ctx, dispatch, watch]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();

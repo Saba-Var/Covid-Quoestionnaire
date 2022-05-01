@@ -9,7 +9,7 @@ import {
 function AntiBodies(props) {
   const ctx = useContext(FormContext);
   const hookForm = {
-    checked: ctx.state.covid.had_antibody_test,
+    checked: ctx.state.had_antibody_test,
     unregister: props.unregister,
     register: props.register,
     component: 'had_antibody_test',

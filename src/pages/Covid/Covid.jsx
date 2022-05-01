@@ -11,7 +11,7 @@ import FormContext from 'state/form-context';
 import { useForm } from 'react-hook-form';
 
 function Covid(props) {
-  const ctx = useContext(FormContext).state.covid;
+  const ctx = useContext(FormContext).state;
   const dispatch = useContext(FormContext).dispatch;
   const {
     setValue,

@@ -13,8 +13,9 @@ import {
 } from 'pages/CovidPolicy/components';
 
 function CovidPolicy() {
-  const ctx = useContext(FormContext).state.covidPolicy;
+  const ctx = useContext(FormContext).state;
   const dispatch = useContext(FormContext).dispatch;
+  console.log(ctx);
 
   const {
     setValue,

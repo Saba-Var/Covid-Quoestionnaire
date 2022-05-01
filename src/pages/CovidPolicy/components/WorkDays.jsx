@@ -4,7 +4,7 @@ import { useContext } from 'react';
 function WorkDays(props) {
   const ctx = useContext(FormContext);
   const inputData = {
-    checked: ctx.state.vaccinated.number_of_days_from_office,
+    checked: ctx.state.number_of_days_from_office,
     register: props.register,
     target: 'number_of_days_from_office',
   };

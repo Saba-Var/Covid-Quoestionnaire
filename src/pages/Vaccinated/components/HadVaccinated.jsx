@@ -9,7 +9,7 @@ function HadVaccinated(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   const ctx = useContext(FormContext);
   const hookForm = {
-    checked: ctx.state.covid.HadCovid,
+    checked: ctx.state.had_vaccine,
     unregister: props.unregister,
     component: 'had_vaccine',
     register: props.hookForm.register,

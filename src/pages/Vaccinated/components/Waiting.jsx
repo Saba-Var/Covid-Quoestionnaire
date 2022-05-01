@@ -11,7 +11,7 @@ function Waiting(props) {
   const inputData = {
     target: 'i_am_waiting',
     register: props.hookForm.register,
-    checked: ctx.state.vaccinated.i_am_waiting,
+    checked: ctx.state.i_am_waiting,
   };
   return (
     <>
