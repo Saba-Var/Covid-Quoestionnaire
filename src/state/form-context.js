@@ -24,7 +24,7 @@ const reducer = (state, action) => {
 };
 
 const initialState = {
-  identification: { firstName: '', lastName: '', email: '' },
+  identification: { first_name: '', last_name: '', email: '' },
   covid: {
     HadCovid: '',
     antibodies: {
@@ -36,10 +36,10 @@ const initialState = {
   },
   vaccinated: { had_vaccine: '', vaccination_stage: '', i_am_waiting: '' },
   covidPolicy: {
-    frequency: '',
-    workDays: '',
-    physicalGathering: '',
-    opinions: '',
+    non_formal_meetings: '',
+    number_of_days_from_office: '',
+    what_about_meetings_in_live: '',
+    tell_us_your_opinion_about_us: '',
   },
 };
 

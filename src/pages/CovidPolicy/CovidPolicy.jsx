@@ -25,23 +25,26 @@ function CovidPolicy() {
   } = useForm({
     mode: 'onChange',
     defaultValues: {
-      frequency: '',
-      workDays: '',
-      physicalGathering: '',
-      opinions: '',
+      non_formal_meetings: '',
+      number_of_days_from_office: '',
+      what_about_meetings_in_live: '',
+      tell_us_your_opinion_about_us: '',
     },
   });
 
   useEffect(() => {
-    setValue('physicalGathering', ctx.physicalGathering);
-    setValue('frequency', ctx.frequency);
-    setValue('opinions', ctx.opinions);
-    setValue('workDays', ctx.workDays);
+    setValue('what_about_meetings_in_live', ctx.what_about_meetings_in_live);
+    setValue('non_formal_meetings', ctx.non_formal_meetings);
+    setValue(
+      'tell_us_your_opinion_about_us',
+      ctx.tell_us_your_opinion_about_us
+    );
+    setValue('number_of_days_from_office', ctx.number_of_days_from_office);
   }, [
-    ctx.frequency,
-    ctx.opinions,
-    ctx.physicalGathering,
-    ctx.workDays,
+    ctx.non_formal_meetings,
+    ctx.tell_us_your_opinion_about_us,
+    ctx.what_about_meetings_in_live,
+    ctx.number_of_days_from_office,
     setValue,
   ]);
 
@@ -55,7 +58,6 @@ function CovidPolicy() {
   const onSubmit = (data, e) => {
     e.preventDefault();
   };
-
   return (
     <div className='pt-5'>
       <div>

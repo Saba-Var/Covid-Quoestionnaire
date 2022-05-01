@@ -2,10 +2,10 @@ import { InputWrapper } from 'components';
 function LastName(props) {
   const hookForm = props.hookForm;
   return (
-    <InputWrapper target={hookForm.errors.lastName}>
+    <InputWrapper target={hookForm.errors.last_name}>
       <label className='font-bold text-tiny'>გვარი*</label>
       <input
-        {...hookForm.register('lastName', {
+        {...hookForm.register('last_name', {
           required: `გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან`,
           validate: {
             minLength: (v) => hookForm.minLength(v, 'გვარის'),

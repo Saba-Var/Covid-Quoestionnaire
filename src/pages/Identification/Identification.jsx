@@ -14,10 +14,10 @@ function Identification() {
   const dispatch = useContext(FormContext).dispatch;
 
   useEffect(() => {
-    setValue('firstName', ctx.firstName);
-    setValue('lastName', ctx.lastName);
+    setValue('first_name', ctx.first_name);
+    setValue('last_name', ctx.last_name);
     setValue('email', ctx.email);
-  }, [ctx.email, ctx.firstName, ctx.lastName]);
+  }, [ctx.email, ctx.first_name, ctx.last_name]);
 
   const {
     watch,
@@ -28,8 +28,8 @@ function Identification() {
   } = useForm({
     mode: 'all',
     defaultValues: {
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
     },
   });

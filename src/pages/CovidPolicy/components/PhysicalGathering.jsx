@@ -5,7 +5,7 @@ function PhysicalGathering(props) {
         რას ფიქრობ ფიზიკურ შეკრებებზე?
       </span>
       <textarea
-        {...props.register('physicalGathering')}
+        {...props.register('what_about_meetings_in_live')}
         className='w-full h-48 bg-transparent border-[0.8px] resize-none text-2xl p-2 border-charcoal'
       />
     </div>
