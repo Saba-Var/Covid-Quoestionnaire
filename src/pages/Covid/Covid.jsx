@@ -24,16 +24,16 @@ function Covid(props) {
     mode: 'onChange',
     defaultValues: {
       HadCovid: '',
-      count: '',
-      Antibodies: '',
-      date: '',
+      antibodies: { test_date: '', number: '' },
+      had_antibody_test: '',
+      covid_sickness_date: '',
     },
   });
   useEffect(() => {
     setValue('HadCovid', ctx.HadCovid);
-    setValue('count', ctx.count);
-    setValue('antibody count', ctx['antibody count']);
-    setValue('date', ctx.date);
+    setValue('had_antibody_test', ctx.had_antibody_test);
+    setValue('antibodies', ctx.antibodies);
+    setValue('covid_sickness_date', ctx.covid_sickness_date);
   }, [ctx, setValue]);
 
   useEffect(() => {
@@ -60,17 +60,17 @@ function Covid(props) {
             register={register}
             unregister={unregister}
           />
-          {ctx.HadCovid === 'კი ' && (
+          {ctx.HadCovid === 'yes' && (
             <Antibodies
               errors={errors}
               register={register}
               unregister={unregister}
             />
           )}
-          {ctx.Antibodies === 'არა' && (
+          {ctx.had_antibody_test === 'false' && (
             <Date register={register} errors={errors} watch={watch} />
           )}
-          {ctx.Antibodies === 'კი' && <Count register={register} />}
+          {ctx.had_antibody_test === 'true' && <Count register={register} />}
           <NavigationArrows
             back='/Identification'
             next='/Vaccinated'

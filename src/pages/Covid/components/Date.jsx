@@ -1,7 +1,7 @@
 import { ErrorMessage } from 'components';
 function Date(props) {
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
-  const dateState = props.watch().date;
+  const dateState = props.watch().covid_sickness_date;
 
   return (
     <div>
@@ -10,7 +10,7 @@ function Date(props) {
       </p>
       <div className='relative'>
         <input
-          {...props.register('date', { required: true })}
+          {...props.register('covid_sickness_date', { required: true })}
           type='date'
           placeholder='დდ/თთ/წწ'
           max='2022-05-01'
@@ -23,7 +23,7 @@ function Date(props) {
           </p>
         )}
       </div>
-      {props.errors.date && <ErrorMessage text={errorMessage} />}
+      {props.errors.covid_sickness_date && <ErrorMessage text={errorMessage} />}
     </div>
   );
 }

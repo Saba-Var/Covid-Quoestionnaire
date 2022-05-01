@@ -13,13 +13,16 @@ function HadCovid(props) {
     register: props.register,
     component: 'HadCovid',
   };
-
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <RadioInputContainer question='გაქვს გადატანილი Covid-19*?'>
-      <RadioButtonUnregister value='კი ' hookForm={hookForm} />
-      <RadioButtonUnregister value='არა' hookForm={hookForm} />
-      <RadioButtonUnregister value='ახლა მაქვს' hookForm={hookForm} />
+      <RadioButtonUnregister value='კი ' hookForm={hookForm} ctxValue={'yes'} />
+      <RadioButtonUnregister value='არა' hookForm={hookForm} ctxValue={'no'} />
+      <RadioButtonUnregister
+        value='ახლა მაქვს'
+        hookForm={hookForm}
+        ctxValue={'have_right_now'}
+      />
       {props.errors.HadCovid && <ErrorMessage text={errorMessage} />}
     </RadioInputContainer>
   );

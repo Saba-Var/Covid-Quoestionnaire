@@ -25,7 +25,15 @@ const reducer = (state, action) => {
 
 const initialState = {
   identification: { firstName: '', lastName: '', email: '' },
-  covid: { HadCovid: '', count: '', Antibodies: '', date: '' },
+  covid: {
+    HadCovid: '',
+    antibodies: {
+      test_date: '',
+      number: '',
+    },
+    had_antibody_test: '',
+    covid_sickness_date: '',
+  },
   vaccinated: { HadVaccinated: '', stage: '', waiting: '' },
   covidPolicy: {
     frequency: '',

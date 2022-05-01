@@ -9,18 +9,18 @@ import {
 function AntiBodies(props) {
   const ctx = useContext(FormContext);
   const hookForm = {
-    checked: ctx.state.covid.Antibodies,
+    checked: ctx.state.covid.had_antibody_test,
     unregister: props.unregister,
     register: props.register,
-    component: 'Antibodies',
+    component: 'had_antibody_test',
   };
 
   const errorMessage = 'ამ ველის შევსება სავალდებულოა';
   return (
     <RadioInputContainer question='ანტისხეულების ტესტი გაქვს გაკეთებული?*'>
-      <RadioButtonUnregister value='კი' hookForm={hookForm} />
-      <RadioButtonUnregister value='არა' hookForm={hookForm} />
-      {props.errors.Antibodies && <ErrorMessage text={errorMessage} />}
+      <RadioButtonUnregister value='კი' hookForm={hookForm} ctxValue={true} />
+      <RadioButtonUnregister value='არა' hookForm={hookForm} ctxValue={false} />
+      {props.errors.had_antibody_test && <ErrorMessage text={errorMessage} />}
     </RadioInputContainer>
   );
 }
