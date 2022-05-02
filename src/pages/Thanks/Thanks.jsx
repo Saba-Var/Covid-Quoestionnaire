@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { star } from 'assets/images';
 const Thanks = () => {
-  // const [redirectNow, setRedirectNow] = useState(false);
-  // useEffect(() => {
-  //   let time = setTimeout(() => {
-  //     setRedirectNow(true);
-  //   }, 3000);
+  const [redirectNow, setRedirectNow] = useState(false);
+  useEffect(() => {
+    let time = setTimeout(() => {
+      setRedirectNow(true);
+    }, 3000);
 
-  //   return () => {
-  //     clearTimeout(time);
-  //   };
-  // }, []);
-  // if (redirectNow) {
-  //   return <Navigate to='/' />;
-  // }
+    return () => {
+      clearTimeout(time);
+    };
+  }, []);
+  if (redirectNow) {
+    return <Navigate to='/' />;
+  }
   return (
     <div className='bg-charcoal  h-screen w-full flex justify-center items-center'>
       <div className='relative z-20'>
