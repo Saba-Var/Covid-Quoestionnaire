@@ -17,8 +17,46 @@ module.exports = {
         'shrink-center': 'shrink-center 0.8s ease-out 0.08s 1 normal none',
         'slide-down': 'slide-down 0.8s ease-out 1.5s 1 normal none',
         hidden: 'hidden 1.5s ease normal none',
+        reveal: 'reveal 1s ease normal none',
+        'reveal-star': 'reveal-star 1.5s ease normal none',
+        'reveal-star-right': 'reveal-star-right 1.5s ease normal none',
       },
       keyframes: {
+        'reveal-star': {
+          from: {
+            top: '0',
+            left: '50%',
+            opacity: '0',
+          },
+          '80%': { top: '0', left: '50%', opacity: '0' },
+          to: {
+            top: '-110%',
+            left: '4%',
+          },
+        },
+        'reveal-star-right': {
+          from: {
+            top: '0',
+            right: '50%',
+            opacity: '0',
+          },
+          '80%': { top: '0', right: '50%', opacity: '0' },
+          to: {
+            top: '120%',
+            right: '8%',
+          },
+        },
+        reveal: {
+          from: {
+            opacity: '0',
+            transform: 'translateY(-10px)',
+          },
+          '50%': { opacity: '0', transform: 'translateY(-10px)' },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
         hidden: {
           from: {
             opacity: '0',
