@@ -74,6 +74,7 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 │    ├── assets      # project images and fonts 
 │    ├── components  # reusable components
 │    │   └── svgs            # svg components
+│    ├── helper      # helper functions
 │    ├── pages       # project pages
 │    │   ├── Covid
 │    │   │   └── components # page components
