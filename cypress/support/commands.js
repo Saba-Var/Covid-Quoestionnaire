@@ -17,14 +17,10 @@ Cypress.Commands.add('minLength', () => {
 });
 
 Cypress.Commands.add('identificationFill', () => {
-  cy.wait(100);
-  cy.get("[dataTestId='firstName']").type('Saba', { delay: 15 }).wait(100);
-  cy.get("[dataTestId='lastName']")
-    .type('Vartasashvili', { delay: 15 })
-    .wait(100);
-  cy.get("[dataTestId='email']")
-    .type('sabavar@redberry.ge', { delay: 15 })
-    .wait(100);
+  cy.get("[dataTestId='firstName']").type('Saba', { delay: 50 });
+  cy.get("[dataTestId='lastName']").type('Vartasashvili', { delay: 50 });
+  cy.get("[dataTestId='email']").type('sabavar@redberry.ge', { delay: 50 });
+
   cy.get("[dataTestId='next']").click();
   cy.url().should('contain', '/Covid');
 });
@@ -85,15 +81,18 @@ Cypress.Commands.add('beforeCovidPolicy', (url) => {
   cy.url().should('include', '/Covid');
   cy.get("[dataTestId='back']").click();
   cy.url().should('include', '/Identification');
-  cy.get("[dataTestId='firstName']")
-    .should('have.value', 'Saba', { delay: 15 })
-    .wait(100);
-  cy.get("[dataTestId='lastName']")
-    .should('have.value', 'Vartasashvili', { delay: 15 })
-    .wait(100);
-  cy.get("[dataTestId='email']")
-    .should('have.value', 'sabavar@redberry.ge', { delay: 15 })
-    .wait(100);
+  cy.get("[dataTestId='firstName']").should('have.value', 'Saba', {
+    delay: 50,
+  });
+
+  cy.get("[dataTestId='lastName']").should('have.value', 'Vartasashvili', {
+    delay: 50,
+  });
+
+  cy.get("[dataTestId='email']").should('have.value', 'sabavar@redberry.ge', {
+    delay: 50,
+  });
+
   cy.contains('ამ ველის შევსება სავალდებულოა').should('not.exist');
   cy.nextPage('/Covid');
   cy.get("[dataTestId='yes']").click();
@@ -103,7 +102,7 @@ Cypress.Commands.add('beforeCovidPolicy', (url) => {
   cy.get("[dataTestId='next']").should('not.exist');
   cy.get("[dataTestId='btn']").click();
   cy.contains('ამ ველის შევსება სავალდებულოა').should('be.visible');
-  cy.get("[dataTestId='antibodyDate']").type('2020-12-31').wait(100);
+  cy.get("[dataTestId='antibodyDate']").type('2020-12-31');
   cy.contains('ამ ველის შევსება სავალდებულოა').should('not.exist');
   cy.nextPage('/Vaccinated');
   cy.nextPage('/Covid-Policy');
@@ -117,9 +116,9 @@ Cypress.Commands.add('beforeCovidPolicy', (url) => {
 
 Cypress.Commands.add('goToCovidPage', (url) => {
   cy.visit('/Identification');
-  cy.get("[dataTestId='firstName']").type('Saba', { delay: 15 });
-  cy.get("[dataTestId='lastName']").type('Vartasashvili', { delay: 15 });
-  cy.get("[dataTestId='email']").type('sabavar@redberry.ge', { delay: 15 });
+  cy.get("[dataTestId='firstName']").type('Saba', { delay: 50 });
+  cy.get("[dataTestId='lastName']").type('Vartasashvili', { delay: 50 });
+  cy.get("[dataTestId='email']").type('sabavar@redberry.ge', { delay: 50 });
   cy.get("[dataTestId='next']").click();
 });
 

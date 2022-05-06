@@ -14,8 +14,8 @@ describe('end2ent', () => {
     cy.get("[dataTestId='once_a_week']").click({ force: true });
     cy.get("[dataTestId='2']").click({ force: true });
     cy.contains('ამ ველის შევსება სავალდებულოა').should('not.exist');
-    cy.get("[dataTestId='physicalGathering']").type('Sounds good').wait(500);
-    cy.get("[dataTestId='opinions']").type('I like everything').wait(500);
+    cy.get("[dataTestId='physicalGathering']").type('Sounds good');
+    cy.get("[dataTestId='opinions']").type('I like everything');
     cy.get("[dataTestId='back']").click();
     cy.url().should('include', '/Vaccinated');
     cy.get("[dataTestId='first_dosage_and_not_registered_yet']").should(
@@ -62,7 +62,7 @@ describe('end2ent', () => {
       statusCode: 201,
     });
     cy.get("[dataTestId='submit']").click();
-    cy.url().should('include', '/Thanks').wait;
+    cy.url().should('include', '/Thanks').wait(3000);
     cy.url().should('include', '/');
   });
 
@@ -77,7 +77,7 @@ describe('end2ent', () => {
       statusCode: 201,
     });
     cy.get("[dataTestId='submit']").click();
-    cy.url().should('include', '/Thanks').wait;
+    cy.url().should('include', '/Thanks');
     cy.url().should('include', '/');
   });
 });
