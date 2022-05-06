@@ -15,6 +15,7 @@ Covid Questionaire collects information about the covid situation and work prefe
 - [Prerequisites](#prerequisites)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
+- [Testing](#testing)
 - [Project Structure](#project-structure)
 - [Resources](#resources)
 
@@ -30,6 +31,7 @@ Covid Questionaire collects information about the covid situation and work prefe
 - <img src="readme/assets/React.png" height="25" style="position: relative; top: 4px" /> [React @18.0.0](https://reactjs.org) - front-end framework
 - <img src='readme/assets/ReactHookForm.png'  height="25" style="position: relative; top: 4px" /> [React Hook Form @7.30.0](https://react-hook-form.com/) - flexible and extensible forms with easy-to-use validation.
 - <img src="readme/assets/TailwindLogo.png" height="18" style="position: relative; top: 4px" /> [tailwindcss @3.0.24](https://tailwindcss.com/) - css framework
+- <img src="readme/assets/Cypress.png" height="22" style="position: relative; top: 4px" /> [cypress @9.6.0](https://www.cypress.io/) - JavaScript End to End Testing Framework
 
 #
 
@@ -66,9 +68,28 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 
 #
 
+## Testing
+
+1\. Run application from the terminal
+
+```sh
+npm start
+```
+
+2\. start cypress
+
+```sh
+npx cypress open
+```
+
+In order to see coverage of testing go to coverage/lcov-report and open index.html
+
+#
+
 ## Project Structure
 
 ```bash
+├─── cypress # project test files
 ├─── readme  # readme assets
 ├─── src     # project source codes
 │    ├── assets      # project images and fonts 
@@ -90,6 +111,7 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 - .eslintrc.json      # eslint config file
 - .gitignore          # gitignore config file
 - .prettierrc.js      # prettier config file
+- cypress.json        # cypress config file
 - jsconfig.json       # config file for absolute path
 - package.json        # dependency manager configurations
 - tailwind.config.js  # tailwindcss config file
