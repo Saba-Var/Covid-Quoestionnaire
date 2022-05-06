@@ -1,6 +1,6 @@
 function PlanningVaccination() {
   return (
-    <div className='pl-12'>
+    <div className='pl-12' dataTestId='planning'>
       <p className='text-xl font-normal text-charcoal'>
         ახალი პროტოკოლით კოვიდის გადატანიდან 1
         <br /> თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.

@@ -88,11 +88,14 @@ function CovidPolicy() {
                 <WorkDays register={register} errors={errors} />
                 <PhysicalGathering register={register} />
                 <Opinions register={register} />
-                <button className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'>
+                <button
+                  dataTestId={'submit'}
+                  className='ml-auto rounded-[42px] text-white px-7 py-4 w-44 bg-cyan-600 font-bold text-lg z-20 hover:bg-cyan-800'
+                >
                   დასრულება
                 </button>
                 <div className='flex justify-center absolute top-[103%] right-[-5%] pb-10'>
-                  <Link to='/Vaccinated'>
+                  <Link to='/Vaccinated' dataTestId='back'>
                     <Arrow styles='rotate-180 w-4 hover:cursor-pointer' />
                   </Link>
                 </div>

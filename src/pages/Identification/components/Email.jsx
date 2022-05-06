@@ -4,6 +4,7 @@ function Email(props) {
     <InputWrapper target={props.errors.email}>
       <label className='font-bold text-tiny '>მეილი*</label>
       <input
+        dataTestId='email'
         {...props.register('email', {
           required: 'თქვენ მიერ შეყვანილი მეილი არასწორია',
           validate: {

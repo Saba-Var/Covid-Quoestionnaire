@@ -1,6 +1,6 @@
 function NotRegistered() {
   return (
-    <div className='pl-12'>
+    <div className='pl-12' dataTestId='notRegistered'>
       <p className='text-xl font-normal text-charcoal'>
         რომ არ გადადო,
         <br /> ბარემ ახლავე დარეგისტრირდი <br />

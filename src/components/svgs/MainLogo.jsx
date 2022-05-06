@@ -1,6 +1,7 @@
 function MainLogo(props) {
   return (
     <svg
+      dataTestId='mainLogo'
       className={props.styles}
       version='1.1'
       id='Layer_1'

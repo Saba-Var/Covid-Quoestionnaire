@@ -5,6 +5,7 @@ function RadioButton(props) {
   return (
     <label className='flex items-center gap-5 text-xl font-medium text-charcoal z-[99999] '>
       <input
+        dataTestId={props.ctxValue}
         {...inputData.register(inputData.target, { required: errorMessage })}
         value={props.ctxValue}
         type='radio'

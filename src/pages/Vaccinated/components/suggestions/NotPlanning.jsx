@@ -1,6 +1,6 @@
 function NotPlanning() {
   return (
-    <div className='pl-12'>
+    <div className='pl-12' dataTestId='notPlan'>
       <p className='text-xl font-normal text-charcoal'>
         👉
         <a

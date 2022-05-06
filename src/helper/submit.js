@@ -29,25 +29,21 @@ function submit(ctx, dispatch, navigate) {
     if (formData[key] === '') delete formData[key];
   }
 
-  try {
-    async function postData() {
-      const response = await fetch('https://covid19.devtest.ge/api/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok === true) {
-        dispatch({ type: 'reset' });
-        navigate('/Thanks', { replace: true });
-      } else throw new Error('fetch failed');
+  async function postData() {
+    const response = await fetch('https://covid19.devtest.ge/api/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok === true) {
+      dispatch({ type: 'reset' });
+      navigate('/Thanks', { replace: true });
     }
-    postData();
-  } catch (error) {
-    console.log(error);
   }
+  postData();
 }
 
 export default submit;

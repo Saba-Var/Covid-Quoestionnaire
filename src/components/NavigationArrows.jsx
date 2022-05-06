@@ -11,20 +11,20 @@ function NavigationArrows(props) {
     >
       <div className='flex gap-32'>
         {props.back && (
-          <Link to={props.back}>
+          <Link to={props.back} dataTestId='back'>
             <Arrow styles='rotate-180 w-4 hover:cursor-pointer ' />
           </Link>
         )}
 
         {props.next &&
           (props.isValid ? (
-            <Link to={props.next}>
+            <Link to={props.next} dataTestId='next'>
               <button>
                 <Arrow styles='w-4 hover:cursor-pointer ' />
               </button>
             </Link>
           ) : (
-            <button>
+            <button dataTestId='btn'>
               <Arrow styles='w-4 hover:cursor-pointer' />
             </button>
           ))}

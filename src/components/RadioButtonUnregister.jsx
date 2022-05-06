@@ -29,6 +29,7 @@ function RadioButtonUnregister(props) {
         })}
         onClick={() => unregister(props.value)}
         value={props.ctxValue}
+        dataTestId={props.ctxValue + ''}
         type='radio'
         className='w-6 h-6'
         defaultChecked={props.ctxValue === hookForm.checked}

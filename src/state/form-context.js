@@ -53,8 +53,6 @@ const reducer = (state, action) => {
     case 'reset': {
       return (state = JSON.parse(JSON.stringify(inputs)));
     }
-    default:
-      return state;
   }
 };
 

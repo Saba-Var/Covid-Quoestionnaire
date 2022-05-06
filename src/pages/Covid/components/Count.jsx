@@ -12,6 +12,7 @@ function Count(props) {
       <div className='flex flex-col gap-6 '>
         <div className='relative'>
           <input
+            dataTestId='antibodyDate'
             {...props.register('antibodies.test_date', { required: true })}
             type='date'
             placeholder='დდ/თთ/წწ'
@@ -25,6 +26,7 @@ function Count(props) {
           )}
         </div>
         <input
+          dataTestId='antibodyCount'
           {...props.register('antibodies.number', { required: true })}
           type='number'
           placeholder='ანტისხეულების რაოდენობა'

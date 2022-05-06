@@ -10,6 +10,7 @@ function Date(props) {
       </p>
       <div className='relative'>
         <input
+          dataTestId='antibodyDate'
           {...props.register('covid_sickness_date', { required: true })}
           type='date'
           placeholder='დდ/თთ/წწ'

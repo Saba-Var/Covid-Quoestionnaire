@@ -1,6 +1,7 @@
 function StartingQuestionnaire() {
   return (
     <svg
+      dataTestId='start'
       className='p-4 pt-0 mt-[0.8px] hover:cursor-pointer'
       width={'12.5rem'}
       viewBox='0 0 188 66'

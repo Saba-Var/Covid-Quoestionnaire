@@ -13,11 +13,16 @@ function StartingPage() {
       <div className='flex items-center flex-col mt-63.7 hover:cursor-pointer '>
         <MainLogo styles={'w-0 h-0 animate-shrink-center absolute z-10'} />
         <img
+          dataTestId={'RedberryLogo'}
           src={RedberryLogo}
           alt='Redberry logo'
-          className='w-16 h-16 mb-24 hover:animate-rotate-center animat'
+          className='w-16 h-16 mb-24 hover:animate-rotate-center '
         />
-        <div onMouseEnter={hoverHandler} onMouseLeave={mouseLeaveHandler}>
+        <div
+          onMouseEnter={hoverHandler}
+          onMouseLeave={mouseLeaveHandler}
+          dataTestId={'startSvg'}
+        >
           <div className='overflow-hidden h-20 animate-hidden'>
             <div className=' animate-slide-down  '>
               <StartButton hover={hover} />

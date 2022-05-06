@@ -1,6 +1,7 @@
 function StartingQuestionaireHover() {
   return (
     <svg
+      dataTestId='startHover'
       className='overflow-visible pr-10 flex items-start hover:cursor-pointer w-[250px]'
       height={'2.75rem'}
       viewBox='0 0 188 66'

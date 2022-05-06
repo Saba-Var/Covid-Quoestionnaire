@@ -5,6 +5,7 @@ function FirstName(props) {
     <InputWrapper target={hookForm.errors.first_name}>
       <label className='font-bold text-tiny'>სახელი*</label>
       <input
+        dataTestId='firstName'
         {...hookForm.register('first_name', {
           required: `სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`,
           validate: {

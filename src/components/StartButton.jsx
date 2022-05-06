@@ -6,13 +6,13 @@ import {
 function StartButton(props) {
   return (
     <>
-      {!props.hover ? (
-        <StartingQuestionnaire />
-      ) : (
-        <Link to='/identification'>
+      <Link to='Identification'>
+        {!props.hover ? (
+          <StartingQuestionnaire />
+        ) : (
           <StartingQuestionaireHover />
-        </Link>
-      )}
+        )}
+      </Link>
     </>
   );
 }
