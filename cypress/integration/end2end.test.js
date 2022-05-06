@@ -5,6 +5,9 @@ describe('end2ent', () => {
     cy.visit('/');
     cy.get("[dataTestId='start']").click();
     cy.url().should('include', 'Identification');
+    cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
+      statusCode: 201,
+    });
   });
 
   it('user stroy 1: did not have Covid-19', () => {
@@ -30,9 +33,6 @@ describe('end2ent', () => {
       'have.value',
       'Sounds good'
     );
-    cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
-      statusCode: 201,
-    });
     cy.get("[dataTestId='submit']").click();
     cy.url().should('include', '/Thanks').wait(3000);
     cy.url().should('include', '/');
@@ -46,9 +46,6 @@ describe('end2ent', () => {
     cy.get("[dataTestId='antibodyCount']").type(120);
     cy.nextPage('/Vaccinated');
     cy.nextPage('/Covid-Policy');
-    cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
-      statusCode: 201,
-    });
     cy.get("[dataTestId='submit']").click();
     cy.url().should('include', '/Thanks').wait(3000);
     cy.url().should('include', '/');
@@ -61,9 +58,6 @@ describe('end2ent', () => {
     cy.get("[dataTestId='antibodyDate']").type('2020-02-02');
     cy.nextPage('/Vaccinated');
     cy.nextPage('/Covid-Policy');
-    cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
-      statusCode: 201,
-    });
     cy.get("[dataTestId='submit']").click();
     cy.url().should('include', '/Thanks');
     cy.url().should('include', '/');

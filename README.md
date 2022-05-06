@@ -70,13 +70,19 @@ To learn React, check out the [React documentation.](https://reactjs.org/)
 
 ## Testing
 
-1\. Run application from the terminal
+1\. copy cypress.json
+
+```sh
+cp cypress.json.example cypress.json
+```
+
+2\. Run application from the terminal
 
 ```sh
 npm start
 ```
 
-2\. start cypress
+3\. start cypress
 
 ```sh
 npx cypress open
