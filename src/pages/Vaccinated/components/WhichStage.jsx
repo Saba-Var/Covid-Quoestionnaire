@@ -1,6 +1,6 @@
 import { RadioInputContainer, ErrorMessage, RadioButton } from 'components';
 import { NotRegistered } from 'pages/Vaccinated/components/suggestions';
-import FormContext from 'state/form-context';
+import FormContext from 'state/formContext';
 import { useContext } from 'react';
 
 function WhichStage(props) {

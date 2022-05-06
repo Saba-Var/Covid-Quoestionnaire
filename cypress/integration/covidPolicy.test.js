@@ -2,14 +2,13 @@
 
 describe('Covid Policy page', () => {
   beforeEach(() => {
-    cy.goToCovidPage();
-    cy.goToVaccinatedPage();
-    cy.goToCovidPolicyPage();
+    cy.visit('/Covid-Policy');
   });
 
   it('when user submits empty form', () => {
     cy.policyRadios();
   });
+
   it('when user checks radio buttons errors should disappear', () => {
     cy.policyRadios();
     cy.get("[dataTestId='twice_a_week']").click({ force: true });

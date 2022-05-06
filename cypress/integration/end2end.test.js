@@ -6,7 +6,8 @@ describe('end2ent', () => {
     cy.get("[dataTestId='start']").click();
     cy.url().should('include', 'Identification');
   });
-  it('user stroy 1', () => {
+
+  it('user stroy 1: did not have Covid-19', () => {
     cy.beforeCovidPolicy();
     cy.contains('ამ ველის შევსება სავალდებულოა').should('not.exist');
     cy.get("[dataTestId='submit']").click();
@@ -34,23 +35,10 @@ describe('end2ent', () => {
     });
     cy.get("[dataTestId='submit']").click();
     cy.url().should('include', '/Thanks').wait(3000);
-
     cy.url().should('include', '/');
   });
 
-  it('user stroy 2', () => {
-    cy.beforeCovidPolicy();
-    cy.get("[dataTestId='once_a_week']").click({ force: true });
-    cy.get("[dataTestId='2']").click({ force: true });
-    cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
-      statusCode: 201,
-    });
-    cy.get("[dataTestId='submit']").click();
-    cy.url().should('include', '/Thanks').wait(3000);
-    cy.url().should('include', '/');
-  });
-
-  it('user stroy 3', () => {
+  it('user stroy 2: had Covid-19 and taken antibody test', () => {
     cy.beforeCovidPolicy();
     cy.backToCovidPage();
     cy.get("[dataTestId='true']").click();
@@ -66,7 +54,7 @@ describe('end2ent', () => {
     cy.url().should('include', '/');
   });
 
-  it('user stroy 4', () => {
+  it('user stroy 3: had Covid-19 and did not take a antibody test', () => {
     cy.beforeCovidPolicy();
     cy.backToCovidPage();
     cy.get("[dataTestId='false']").click();

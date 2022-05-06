@@ -1,5 +1,5 @@
 import { NavigationArrows } from 'components';
-import FormContext from 'state/form-context';
+import FormContext from 'state/formContext';
 import { useForm } from 'react-hook-form';
 import { Card, Header } from 'components';
 import { useContext } from 'react';
