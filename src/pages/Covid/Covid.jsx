@@ -7,7 +7,7 @@ import {
 } from 'pages/Covid/components';
 import { Header, Card, NavigationArrows } from 'components';
 import { useContext, useEffect } from 'react';
-import FormContext from 'state/formContext';
+import FormContext from 'state/FormContext';
 import { useForm } from 'react-hook-form';
 
 function Covid(props) {

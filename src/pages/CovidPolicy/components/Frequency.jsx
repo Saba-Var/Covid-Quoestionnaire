@@ -1,5 +1,5 @@
 import { RadioInputContainer, ErrorMessage, RadioButton } from 'components';
-import FormContext from 'state/formContext';
+import FormContext from 'state/FormContext';
 import { useContext } from 'react';
 function Frequency(props) {
   const ctx = useContext(FormContext);
